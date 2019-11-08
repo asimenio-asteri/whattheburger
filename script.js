@@ -3,6 +3,12 @@ var customers = 0;
 var money = 0;
 var cookBurgerTime = null;
 var time = 0;
+var updateAll = setInterval(update, 100);
+//add customers
+function update() {
+  document.getElementById("burgerNum").innerHTML = "Burgers: " + burgers;
+  document.getElementById("moneyNum").innerHTML = "Money: " + money;
+}
 function serveBurger() {
   if (burgers >= 1) {
     burgers--;
