@@ -10,7 +10,9 @@ function serveBurger() {
   };
 };
 function cookBurger() {
-  cookBurgerTime = setInterval(cookBar, 10);
+  if (cookBurgerTime === undefined) {
+    cookBurgerTime = setInterval(cookBar, 10);
+  }
 }
 function cookBar() {
   if (time <= 1000) {
