@@ -1,6 +1,6 @@
 var burgers = 0;
 var customers = 0;
-var money = 0;
+var money = 5;
 var cookBurgerTime = null;
 var time = 0;
 var updateAll = setInterval(update, 100);
