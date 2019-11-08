@@ -1,4 +1,6 @@
 body {
   color: black;
   background-color: powderblue;
+  border: 1px solid plum;
+  padding: 20px; 
 }
