@@ -11,10 +11,6 @@ function serveBurger() {
 };
 function cookBurger() {
   var cookBurgerTime = setInterval(cookBar, 10);
-  if (time = 1000) {
-    burgers++;
-    money--;
-  }
 }
 function cookBar() {
   if (time <= 1000) {
@@ -24,5 +20,7 @@ function cookBar() {
     time = 0;
     document.getElementById("progressCook").value = 0;
     var cookBurgerTime = undefined;
+    burgers++;
+    money--;
   }
 }
