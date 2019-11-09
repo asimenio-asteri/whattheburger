@@ -12,6 +12,7 @@ function update() {
   document.getElementById("moneyNum").innerHTML = "Money: " + money;
 }
 function updateCust() {
+  random = Math.random();
   let random2 = random * custMult;
   let mult = custMult / 2;
   if (random2 <= mult) {
