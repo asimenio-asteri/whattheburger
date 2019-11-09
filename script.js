@@ -71,3 +71,9 @@ function buy(food) {
     money -= 4;
   }
 }
+function openOptions() {
+  document.getElementById("optionsMenu").style.display = block; 
+}
+function closeOptions() {
+  document.getElementById("optionsMenu").style.display = none;
+}
