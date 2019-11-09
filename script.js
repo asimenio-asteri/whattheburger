@@ -72,8 +72,8 @@ function buy(food) {
   }
 }
 function openOptions() {
-  document.getElementById("optionsMenu").style.display = block; 
+  document.getElementById("optionsMenu").style.display = "block"; 
 }
 function closeOptions() {
-  document.getElementById("optionsMenu").style.display = none;
+  document.getElementById("optionsMenu").style.display = "none";
 }
