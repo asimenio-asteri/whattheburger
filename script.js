@@ -62,3 +62,12 @@ function cookBar() {
     cheese--;
   }
 }
+function buy(food) {
+  if (food === "cheese") {
+    cheese += 5;
+    money -= 3;
+  } else if (food === "buns") {
+    buns += 5;
+    money -= 4;
+  }
+}
