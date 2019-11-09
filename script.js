@@ -1,6 +1,8 @@
 var burgers = 0;
 var customers = 0;
 var money = 5;
+var buns = 10;
+var cheese = 5;
 var cookBurgerTime = null;
 var time = 0;
 var updateCustomers = setInterval(updateCust, 10000);
@@ -54,6 +56,7 @@ function cookBar() {
     clearInterval(cookBurgerTime);
     cookBurgerTime = null;
     burgers++;
-    money--;
+    buns -= 2;
+    cheese--;
   }
 }
