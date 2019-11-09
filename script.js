@@ -13,6 +13,8 @@ function update() {
   document.getElementById("burgerNum").innerHTML = "Burgers: " + burgers;
   document.getElementById("moneyNum").innerHTML = "Money: " + money;
   document.getElementById("customerNum").innerHTML = "Customers: " + customers;
+  document.getElementById("cheeseNum").innerHTML = "Cheese: " + cheese;
+  document.getElementById("bunsNum").innerHTML = "Buns: " + buns;
 }
 function updateCust() {
   random = Math.random();
