@@ -3,6 +3,7 @@ body {
   background-color: powderblue;
   border: 1px solid plum;
   padding: 20px; 
+  font-family: vernanda;
 }
 #progressCook{
   color:red;
