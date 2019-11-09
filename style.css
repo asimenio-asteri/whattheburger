@@ -1,10 +1,14 @@
 body {
+  /* this is a comment */
   color: black;
   background-color: powderblue;
+  /* ^ is powderblue even a color */
   border: 1px solid plum;
   padding: 20px; 
   font-family: Georgia;
+  /* no */
 }
+/* you need spaces */
 #progressCook{
   color:red;
 }
