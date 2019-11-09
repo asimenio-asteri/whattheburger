@@ -28,6 +28,7 @@ function updateCust() {
   } else if (random2 = 0) {
     customers = 5;
   }
+  document.getElementById("customerNum").innerHTML = "Customers: " + customers;
 }
 function serveBurger() {
   if (burgers >= 1 && customers >= 1) {
