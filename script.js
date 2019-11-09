@@ -26,6 +26,7 @@ function updateCust() {
     customers = 4;
   } else if (random2 = 0) {
     customers = 5;
+  }
 }
 function serveBurger() {
   if (burgers >= 1 && customers >= 1) {
