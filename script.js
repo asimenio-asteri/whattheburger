@@ -15,13 +15,23 @@ function updateCust() {
   let random2 = random * custMult;
   let mult = custMult / 2;
   if (random2 <= mult) {
+    customers = 0;
+  } else if (random2 <= mult + 2) {
     customers = 1;
-  }
+  } else if (random2 <= mult + 4) {
+    customers = 2;
+  } else if (random2 <= mult + 6) {
+    customers = 3; 
+  } else if (random2 <= mult + 8) {
+    customers = 4;
+  } else if (random2 = 0) {
+    customers = 5;
 }
 function serveBurger() {
-  if (burgers >= 1) {
+  if (burgers >= 1 && customers >= 1) {
     burgers--;
     money += 5;
+    customers--;
   };
 };
 function cookBurger() {
