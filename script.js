@@ -24,19 +24,19 @@ function update() {
 function updateOther() {
   random = Math.random();
   random2 = Math.random();
-  let random2 =andom * custMult;
+  let randomX = random * custMult;
   let mult = custMult / 2;
-  if (random <= mult) {
+  if (randomX <= mult) {
     customers = 0;
-  } else if (random2 <= mult + 2) {
+  } else if (randomX <= mult + 2) {
     customers = 1;
-  } else if (random2 <= mult + 4) {
+  } else if (randomX <= mult + 4) {
     customers = 2;
-  } else if (random2 <= mult + 6) {
+  } else if (randomX <= mult + 6) {
     customers = 3; 
-  } else if (random2 <= mult + 8) {
+  } else if (randomX <= mult + 8) {
     customers = 4;
-  } else if (random2 = 0) {
+  } else if (randomX = 0) {
     customers = 5;
   }
   if (random <= 0.5) {
@@ -44,7 +44,21 @@ function updateOther() {
   } else {
     stonks1 = false;
   }
-  if (random
+  if (random2 <= 0.5) {
+    stonks2 = false;  
+  } else {
+    stonks2 = true;
+  }
+  if (stonks1 = true) {
+    stocksCheese++;
+  } else {
+    stocksCheese--;
+  }
+  if (stonks2 = true) {
+    stocksBuns++;
+  } else {
+    stocksBuns--;
+  }
 }
 function serveBurger() {
   if (burgers >= 1 && customers >= 1) {
