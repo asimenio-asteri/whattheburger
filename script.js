@@ -51,6 +51,7 @@ function comments() {
       break;
     default:
       comment = "what is stonks"
+  }
 }
 function update() {
   random = Math.random();
