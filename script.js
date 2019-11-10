@@ -3,11 +3,16 @@ var customers = 0;
 var money = 5;
 var buns = 10;
 var cheese = 5;
+var stonks1;
+var stonks2;
+var stocksCheese = 3;
+var stocksBuns = 4;
 var cookBurgerTime = null;
 var time = 0;
-var updateCustomers = setInterval(updateCust, 10000);
+var updateCustomers = setInterval(updateOther, 10000);
 var updateAll = setInterval(update, 100);
 var random = Math.random();
+var random2 = Math.random();
 var custMult = 10;
 function update() {
   document.getElementById("burgerNum").innerHTML = "Burgers: " + burgers;
@@ -16,11 +21,12 @@ function update() {
   document.getElementById("cheeseNum").innerHTML = "Cheese: " + cheese;
   document.getElementById("bunsNum").innerHTML = "Buns: " + buns;
 }
-function updateCust() {
+function updateOther() {
   random = Math.random();
-  let random2 = random * custMult;
+  random2 = Math.random();
+  let random2 =andom * custMult;
   let mult = custMult / 2;
-  if (random2 <= mult) {
+  if (random <= mult) {
     customers = 0;
   } else if (random2 <= mult + 2) {
     customers = 1;
@@ -33,6 +39,12 @@ function updateCust() {
   } else if (random2 = 0) {
     customers = 5;
   }
+  if (random <= 0.5) {
+     stonks1 = true;
+  } else {
+    stonks1 = false;
+  }
+  if (random
 }
 function serveBurger() {
   if (burgers >= 1 && customers >= 1) {
