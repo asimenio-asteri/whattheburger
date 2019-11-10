@@ -135,10 +135,10 @@ function cookBar() {
   }
 }
 function buy(food) {
-  if (food === 'cheese' && money >= stonksCheese) {
+  if (food === 'cheese' && money >= stocksCheese) {
     cheese += 5;
     money -= stocksCheese;
-  } else if (food === 'buns' && money >= stonksBuns) {
+  } else if (food === 'buns' && money >= stocksBuns) {
     buns += 5;
     money -= stocksBuns;
   }
