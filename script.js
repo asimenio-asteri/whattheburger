@@ -137,9 +137,9 @@ function cookBar() {
 function buy(food) {
   if (food === 'cheese' && money >= stonksCheese) {
     cheese += 5;
-    money -= stonksCheese;
+    money -= stocksCheese;
   } else if (food === 'buns' && money >= stonksBuns) {
     buns += 5;
-    money -= stonksBuns;
+    money -= stocksBuns;
   }
 }
