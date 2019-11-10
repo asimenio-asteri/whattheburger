@@ -20,6 +20,8 @@ function update() {
   document.getElementById("customerNum").innerHTML = "Customers: " + customers;
   document.getElementById("cheeseNum").innerHTML = "Cheese: " + cheese;
   document.getElementById("bunsNum").innerHTML = "Buns: " + buns;
+  document.getElementById("stonksCheese").innerHTML = "Price: " + stocksCheese;
+  document.getElementById("stonksBuns").innerHTML = "Price: " + stocksBuns;
 }
 function updateOther() {
   random = Math.random();
