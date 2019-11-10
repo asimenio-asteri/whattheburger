@@ -93,15 +93,15 @@ function updateOther() {
   } else {
     stonks2 = true;
   }
-  if (stonks1 == true) {
-    stocksCheese++;
-  } else {
+  if (stonks1 == true && stocksCheese >=) {
     stocksCheese--;
-  }
-  if (stonks2 == true) {
-    stocksBuns++;
   } else {
+    stocksCheese++;
+  }
+  if (stonks2 == true && stocksBuns >= 1) {
     stocksBuns--;
+  } else {
+    stocksBuns++;
   }
 }
 function serveBurger() {
