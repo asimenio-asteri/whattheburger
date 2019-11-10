@@ -1,3 +1,2 @@
-This file will have requirements every so often. You should read them and update this branches files accordingly.
-Req 1: Remove inline styles
-This document may also have some code in it for you to code. #english
+req 1: Update all files here to be compatible with the current game (copy paste Master HTML)
+req 2: Learn JS
