@@ -44,7 +44,7 @@ function updateOther() {
     customers = 5;
   }
   if (random <= 0.5) {
-     stonks1 = true;
+    stonks1 = true;
   } else {
     stonks1 = false;
   }
