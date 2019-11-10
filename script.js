@@ -53,12 +53,12 @@ function updateOther() {
   } else {
     stonks2 = true;
   }
-  if (stonks1 = true) {
+  if (stonks1 == true) {
     stocksCheese++;
   } else {
     stocksCheese--;
   }
-  if (stonks2 = true) {
+  if (stonks2 == true) {
     stocksBuns++;
   } else {
     stocksBuns--;
