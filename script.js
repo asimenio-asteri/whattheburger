@@ -11,9 +11,47 @@ var cookBurgerTime = null;
 var time = 0;
 var updateCustomers = setInterval(updateOther, 10000);
 var updateAll = setInterval(update, 100);
+var updateComment = setInterval(comments, 15000);
+var comment = "No comments yet...";
 var random = Math.random();
 var random2 = Math.random();
 var custMult = 10;
+function comments() {
+  let num = Math.round(random * 10);
+  switch(num) {
+    case 0:
+      comment = "This tastes horrible! 1/5 stars."
+      break;
+    case 1:
+      comment = "I don't like it. 2/5 stars..."
+      break;
+    case 2:
+      comment = "I guess I'll eat it... 3/5"
+      break;
+    case 3:
+      comment = "What if I told you we live in a GAME!"
+      break;
+    case 4:
+      comment = "OMG SUCH GUCCI YEET 10/% STARS"
+      break;
+    case 5:
+      comment = "This place is pretty cheap, and it tastes kinda good. 4/5 star."
+      break;
+    case 6:
+      comment = "Why no boterham? (english: sandwich)"
+      break;
+    case 7:
+      comment = "Needs more kinds of food than just burgers."
+      break;
+    case 8:
+      comment = "wtf happened to my toilet"
+      break;
+    case 9:
+      comment = "DaveRainbowin said this was a good place to go! He's right!"
+      break;
+    default:
+      comment = "what is stonks"
+}
 function update() {
   random = Math.random();
   random2 = Math.random();
@@ -24,6 +62,7 @@ function update() {
   document.getElementById("bunsNum").innerHTML = "Buns: " + buns;
   document.getElementById("stonksCheese").innerHTML = "Price: " + stocksCheese;
   document.getElementById("stonksBuns").innerHTML = "Price: " + stocksBuns;
+  document.getElementById("comments").innerHTML = comment;
 }
 function updateOther() {
   random = Math.random();
