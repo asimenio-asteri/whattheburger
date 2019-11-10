@@ -93,7 +93,7 @@ function updateOther() {
   } else {
     stonks2 = true;
   }
-  if (stonks1 == true && stocksCheese >=) {
+  if (stonks1 == true && stocksCheese >= 1) {
     stocksCheese--;
   } else {
     stocksCheese++;
