@@ -91,11 +91,11 @@ function cookBar() {
   }
 }
 function buy(food) {
-  if (food === "cheese" && money >= 3) {
+  if (food === "cheese" && money >= stonksCheese) {
     cheese += 5;
-    money -= 3;
-  } else if (food === "buns" && money >= 4) {
+    money -= stonksCheese;
+  } else if (food === "buns" && money >= stonksBuns) {
     buns += 5;
-    money -= 4;
+    money -= stonksBuns;
   }
 }
