@@ -15,6 +15,8 @@ var random = Math.random();
 var random2 = Math.random();
 var custMult = 10;
 function update() {
+  random = Math.random();
+  random2 = Math.random();
   document.getElementById("burgerNum").innerHTML = "Burgers: " + burgers;
   document.getElementById("moneyNum").innerHTML = "Money: " + money;
   document.getElementById("customerNum").innerHTML = "Customers: " + customers;
