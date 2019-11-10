@@ -61,8 +61,6 @@ function cookBar() {
       burgers++;
       buns -= 2;
       cheese--;
-    } else {
-      document.write("<p>This is a troll. Look up 'document.write() js'. And also you didn't have enough buns and/or cheese.</p>")
     }
   }
 }
