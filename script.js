@@ -49,24 +49,28 @@ function cookBurger() {
   }
 }
 function cookBar() {
-  if (time != 1000) {
-    time++;
-    document.getElementById("progressCook").value = time;
-  } else {
-    time = 0;
-    document.getElementById("progressCook").value = 0;
-    clearInterval(cookBurgerTime);
-    cookBurgerTime = null;
-    burgers++;
-    buns -= 2;
-    cheese--;
+  if (cheese >= 1 && buns >= 2) {
+    if (time != 1000) {
+      time++;
+      document.getElementById("progressCook").value = time;
+    } else {
+      time = 0;
+      document.getElementById("progressCook").value = 0;
+      clearInterval(cookBurgerTime);
+      cookBurgerTime = null;
+      burgers++;
+      buns -= 2;
+      cheese--;
+    } else {
+      document.write("<p>This is a troll. Look up 'document.write() js'. And also you didn't have enough buns and/or cheese.</p>")
+    }
   }
 }
 function buy(food) {
-  if (food === "cheese") {
+  if (food === "cheese" && money >= 3) {
     cheese += 5;
     money -= 3;
-  } else if (food === "buns") {
+  } else if (food === "buns" && money >= 4) {
     buns += 5;
     money -= 4;
   }
