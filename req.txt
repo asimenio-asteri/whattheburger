@@ -1,0 +1,3 @@
+This file will have requirements every so often. You should read them and update this branches files accordingly.
+Req 1: Remove inline styles
+This document may also have some code in it for you to code. #english
