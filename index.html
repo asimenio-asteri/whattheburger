@@ -6,25 +6,31 @@
     <script src="script.js"></script>
   </head>
   <body>
-    <div>
-      <h1 id="burgerNum">Burgers: 0</h1>
-      <h2 id="cheeseNum">Cheese: 5</h2>
-      <h2 id="bunsNum">Buns: 10</h2>
-      <h1 id="moneyNum">Money: 5</h1>
-      <h1 id="customerNum">Customers: 0</h1>
+    <div id="basicMenu">
+      <div>
+        <h1 id="burgerNum">Burgers: 0</h1>
+        <h2 id="cheeseNum">Cheese: 5</h2>
+        <h2 id="pattyNum">Patty: 0</h2>
+        <h2 id="bunsNum">Buns: 10</h2>
+        <h1 id="moneyNum">Money: 5</h1>
+        <h1 id="customerNum">Customers: 0</h1>
+      </div>
+      <div>
+        <p id="comments">No comments yet...</p>
+      </div>
+      <button onclick="cookBurger()">Cook Burger</button> <br />
+      <progress id="progressCook" value="0" max="1000"></progress> <br />
+      <button onclick="serveBurger()">Serve Burger</button>
+      <div>
+        <h1>Food Market</h1>
+        <button onclick="buy('cheese')">Buy Cheese</button> <br />
+        <p id="stonksCheese">Price: 3</p>
+        <button onclick="buy('buns')">Buy Buns</button> <br />
+        <p id="stonksBuns">Price: 4</p>
+      </div>
     </div>
-    <div>
-      <p id="comments">No comments yet...</p>
-    </div>
-    <button onclick="cookBurger()">Cook Burger</button> <br />
-    <progress id="progressCook" value="0" max="1000"></progress> <br />
-    <button onclick="serveBurger()">Serve Burger</button>
-    <div>
-      <h1>Food Market</h1>
-      <button onclick="buy('cheese')">Buy Cheese</button> <br />
-      <p id="stonksCheese">Price: 3</p>
-      <button onclick="buy('buns')">Buy Buns</button> <br />
-      <p id="stonksBuns">Price: 4</p>
+    <div id="researchMenu">
+      <h1>Reasearch Menu</h1>
     </div>
   </body>
 <html>
