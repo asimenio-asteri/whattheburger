@@ -3,8 +3,6 @@ var customers = 0;
 var money = 5;
 var buns = 10;
 var cheese = 5;
-var stonks1;
-var stonks2;
 var stocksCheese = 3;
 var stocksBuns = 4;
 var cookBurgerTime = null;
@@ -83,22 +81,12 @@ function updateOther() {
   } else if (randomX = 0) {
     customers = 5;
   }
-  if (random <= 0.5) {
-    stonks1 = true;
-  } else {
-    stonks1 = false;
-  }
-  if (random2 <= 0.5) {
-    stonks2 = false;  
-  } else {
-    stonks2 = true;
-  }
-  if (stonks1 == true && stocksCheese >= 1) {
+  if (stocksCheese >= 1 && random2 >= 0.5) {
     stocksCheese--;
   } else {
     stocksCheese++;
   }
-  if (stonks2 == true && stocksBuns >= 1) {
+  if (random >= 0.5 && stocksBuns >= 1) {
     stocksBuns--;
   } else {
     stocksBuns++;
