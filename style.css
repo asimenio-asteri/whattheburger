@@ -1,6 +1,4 @@
-#optionsMenu {
-  display: none;
-}
-* {
-  position: sticky;
+.numbers {
+  border: 2px solid grey;
+  border-radius: 8px;
 }
