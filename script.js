@@ -3,6 +3,7 @@ var customers = 0;
 var money = 5;
 var buns = 10;
 var cheese = 5;
+var patty = 0;
 var stocksCheese = 3;
 var stocksBuns = 4;
 var cookBurgerTime = null;
@@ -59,6 +60,7 @@ function update() {
   document.getElementById("customerNum").innerHTML = "Customers: " + customers;
   document.getElementById("cheeseNum").innerHTML = "Cheese: " + cheese;
   document.getElementById("bunsNum").innerHTML = "Buns: " + buns;
+  document.getElementById("pattyNum").innerHTML = "Patty: " + patty;
   document.getElementById("stonksCheese").innerHTML = "Price: " + stocksCheese;
   document.getElementById("stonksBuns").innerHTML = "Price: " + stocksBuns;
   document.getElementById("comments").innerHTML = comment;
