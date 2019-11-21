@@ -150,3 +150,13 @@ function checkIngredients() {
     window.alert("You have to have more than just buns!");
   };
 };
+function startResearch(type) {
+  let resBar = document.getElementById("resBar")
+  let value = 0;
+  if (type == "hamburger" && resPt >= 100) {
+    for (i = 0; i < 1000; i++) {
+      value += 0.001;
+      resBar.value = value;
+    }
+  }
+}

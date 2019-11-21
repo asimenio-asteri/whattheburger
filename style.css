@@ -3,3 +3,6 @@
   border-radius: 8px;
   width: auto;
 }
+#researchMenu {
+  display: none;
+}
