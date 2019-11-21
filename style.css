@@ -1,4 +1,5 @@
 .numbers {
   border: 2px solid grey;
   border-radius: 8px;
+  width: auto;
 }
