@@ -3,8 +3,8 @@ var customers = 0;
 var money = 5;
 var burgerType = 0;
 // 0 = just cheese & buns (all have buns)
-// 1 = cheese & patty
-// 2 = just patty
+// 1 = just patty
+// 2 = cheese & patty
 var buns = 10;
 var cheese = 5;
 var patty = 0;
@@ -138,13 +138,15 @@ function buy(food) {
   }
 }
 function checkIngredients() {
-  let cheeseCheck = document.getElementById("checkCheese").value; 
-  let pattyCheck = document.getElementById("checkPatty").value;
-  if (cheeseCheck == "cheeseIng" && pattyCheck != "pattyIng") {
+  let cheeseCheck = document.getElementById("checkCheese").checked; 
+  let pattyCheck = document.getElementById("checkPatty").checked;
+  if (cheeseCheck && !pattyCheck) {
     burgerType = 0;
-  } else if (cheeseCheck == "cheeseIng" && pattyCheck == "pattyIng") {
+  } else if (!cheeseCheck && pattyCheck) {
     burgerType = 1;
-  } else if (cheeseCheck != "cheeseIng" && pattyCheck == "pattyIng") {
+  } else if (cheeseCheck && pattyCheck) {
     burgerType = 2;
-  }
-}
+  } else {
+    window.alert("You have to have more than just buns!");
+  };
+};
