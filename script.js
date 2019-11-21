@@ -1,6 +1,10 @@
 var burgers = 0;
 var customers = 0;
 var money = 5;
+var burgerType = 0;
+// 0 = just cheese & buns (all have buns)
+// 1 = cheese & patty
+// 2 = just patty
 var buns = 10;
 var cheese = 5;
 var patty = 0;
@@ -131,5 +135,16 @@ function buy(food) {
   } else if (food === 'buns' && money >= stocksBuns) {
     buns += 5;
     money -= stocksBuns;
+  }
+}
+function checkIngredients() {
+  let cheeseCheck = document.getElementById("checkCheese").value; 
+  let pattyCheck = document.getElementById("checkPatty").value;
+  if (cheeseCheck == "cheeseIng" && pattyCheck != "pattyIng") {
+    burgerType = 0;
+  } else if (cheeseCheck == "cheeseIng" && pattyCheck == "pattyIng") {
+    burgerType = 1;
+  } else if (cheeseCheck != "cheeseIng" && pattyCheck == "pattyIng") {
+    burgerType = 2;
   }
 }

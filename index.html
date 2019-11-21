@@ -19,7 +19,9 @@
         <p id="comments">No comments yet...</p>
       </div>
       <button onclick="cookBurger()">Cook Burger</button> <br />
-      <!-- stuff for pick the type of burger -->
+      <input type="checkbox" id="checkCheese" value="cheeseIng">Cheese</input>
+      <input type="checkbox" id="checkPatty" value="pattyIng">Patty</input>
+      <button type="submit" onclick="checkIngredients()">Enable</button>
       <progress id="progressCook" value="0" max="1000"></progress> <br />
       <button onclick="serveBurger()">Serve Burger</button>
       <hr />
