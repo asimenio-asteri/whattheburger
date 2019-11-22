@@ -12,6 +12,7 @@ var stocksCheese = 3;
 var stocksBuns = 4;
 var cookBurgerTime = null;
 var time = 0;
+var resPt = 0;
 var updateCustomers = setInterval(updateOther, 10000);
 var updateAll = setInterval(update, 100);
 var updateComment = setInterval(comments, 15000);
