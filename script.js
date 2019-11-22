@@ -10,7 +10,6 @@ var cheese = 5;
 var patty = 0;
 var stocksCheese = 3;
 var stocksBuns = 4;
-var cookBurgerTime = null;
 var time = 0;
 var resPt = 0;
 var updateCustomers = setInterval(updateOther, 10000);
@@ -107,25 +106,47 @@ function serveBurger() {
   };
 };
 function cookBurger() {
+  var cookBurgerTime = null;
   if (cookBurgerTime == null) {
     cookBurgerTime = setInterval(cookBar, 10);
   } else {
     document.getElementById("progressCook").value = time;
   }
+  function cookBar() {
+    if (cheese >= 1 && buns >= 2) {
+      if (time != 1000) {
+        time++;
+        document.getElementById("progressCook").value = time;
+      } else {
+        time = 0;
+        document.getElementById("progressCook").value = 0;
+        clearInterval(cookBurgerTime);
+        cookBurgerTime = null;
+        burgers++;
+        buns -= 2;
+        cheese--;
+      }
+    }
+  }
 }
-function cookBar() {
-  if (cheese >= 1 && buns >= 2) {
-    if (time != 1000) {
-      time++;
-      document.getElementById("progressCook").value = time;
+function progressBars() {
+  var resBar = null;
+  if (resPattyTime == null) {
+    resPattyTime = setInterval(resPatty, 1000);
+  } else {
+    resBar.value = value;
+  }
+  function resPatty() {
+    const resBar = document.getElementById("resBar")
+    var value = 0;
+    if (resPt >= 100) {
+      value += 0.001
+      resBar.value = value;
     } else {
-      time = 0;
-      document.getElementById("progressCook").value = 0;
-      clearInterval(cookBurgerTime);
-      cookBurgerTime = null;
-      burgers++;
-      buns -= 2;
-      cheese--;
+      value = 0;
+      clearInterval(resPattyTime)
+      resPattyTime = null;
+      resPt -= 100;
     }
   }
 }
