@@ -173,4 +173,3 @@ function openTab(pageName) {
   }
   document.getElementById(pageName).style.display = "block";
 }
-document.getElementById("defaultOpen").click();
