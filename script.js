@@ -160,3 +160,16 @@ function startResearch(type) {
     }
   }
 }
+function openTab(pageName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("menu");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("menuBtn");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+}
+document.getElementById("defaultOpen").click();

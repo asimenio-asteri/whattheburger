@@ -7,10 +7,10 @@
   </head>
   <body>
     <div id="menuButtons">
-      <button class="menuBtn">Cook</button> 
-      <button class="menuBtn">Research</button>
+      <button class="menuBtn" onclick="openTab('basicMenu')" id="defaultOpen">Cook</button> 
+      <button class="menuBtn" onclick="openTab('researchMenu')">Research</button>
     </div>
-    <div id="basicMenu">
+    <div id="basicMenu" class="menu">
       <div>
         <h1 id="burgerNum" class="numbers">Burgers: 0</h1>
         <h2 class="numbers" id="cheeseNum">Cheese: 5</h2>
@@ -37,7 +37,7 @@
         <p id="stonksBuns">Price: 4</p>
       </div>
     </div>
-    <div id="researchMenu">
+    <div id="researchMenu" class="menu">
       <h1>Research</h1>
       <progress max="1" id="resBar"></progress>
       <h2>Burger Types</h2>
