@@ -103,6 +103,7 @@ function serveBurger() {
     burgers--;
     money += 5;
     customers--;
+    resPt++;
   };
 };
 function cookBurger() {
