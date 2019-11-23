@@ -146,14 +146,16 @@ function resPatty() {
   var resBar = document.getElementById("resBar");
   var value = 0;
   if (resPt >= 100) {
-    value += 0.001;
-    resBar.value = value;
-  } else {
-    value = 0;
-    clearInterval(resPattyTime)
-    resPattyTime = null;
-    resPt -= 100;
-    pattyUnlock = true;
+    if (value != 1) {
+      value += 0.001;
+      resBar.value = value;
+    } else {
+      value = 0;
+      clearInterval(resPattyTime)
+      resPattyTime = null;
+      resPt -= 100;
+      pattyUnlock = true;
+    }
   }
 }
 function buy(food) {
