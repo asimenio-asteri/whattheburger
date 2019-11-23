@@ -133,7 +133,6 @@ function cookBar() {
   }
 }
 function progressBars() {
-  var resPattyTime = null;
   var resBar = document.getElementById("resBar");
   var value = 0;
   if (resPattyTime == null && !pattyUnlock) {
