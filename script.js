@@ -132,11 +132,15 @@ function cookBurger() {
 }
 function progressBars() {
   var resBar = null;
+  var resPattyTime = null;
+  var resBar = document.getElementById("resBar");
+  var value = 0;
   if (resPattyTime == null) {
     resPattyTime = setInterval(resPatty, 1000);
   } else {
     resBar.value = value;
   }
+
   function resPatty() {
     const resBar = document.getElementById("resBar")
     var value = 0;
