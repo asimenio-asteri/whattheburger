@@ -5,6 +5,7 @@ var burgerType = 0;
 // 0 = just cheese & buns (all have buns)
 // 1 = just patty
 // 2 = cheese & patty
+var pattyUnlock = false;
 var buns = 10;
 var cheese = 5;
 var patty = 0;
@@ -12,6 +13,7 @@ var stocksCheese = 3;
 var stocksBuns = 4;
 var time = 0;
 var resPt = 0;
+var cookBurgerTime = null;
 var updateCustomers = setInterval(updateOther, 10000);
 var updateAll = setInterval(update, 100);
 var updateComment = setInterval(comments, 15000);
@@ -107,7 +109,6 @@ function serveBurger() {
   };
 };
 function cookBurger() {
-  var cookBurgerTime = null;
   if (cookBurgerTime == null) {
     cookBurgerTime = setInterval(cookBar, 10);
   } else {
@@ -140,7 +141,6 @@ function progressBars() {
   } else {
     resBar.value = value;
   }
-
   function resPatty() {
     const resBar = document.getElementById("resBar")
     var value = 0;
@@ -173,9 +173,7 @@ function checkIngredients() {
     burgerType = 1;
   } else if (cheeseCheck && pattyCheck) {
     burgerType = 2;
-  } else {
-    window.alert("You have to have more than just buns!");
-  };
+  }
 };
 function startResearch(type) {
   let resBar = document.getElementById("resBar")
