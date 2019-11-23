@@ -113,20 +113,20 @@ function cookBurger() {
   } else {
     document.getElementById("progressCook").value = time;
   }
-  function cookBar() {
-    if (cheese >= 1 && buns >= 2) {
-      if (time != 1000) {
-        time++;
-        document.getElementById("progressCook").value = time;
-      } else {
-        time = 0;
-        document.getElementById("progressCook").value = "0";
-        clearInterval(cookBurgerTime);
-        cookBurgerTime = null;
-        burgers++;
-        buns -= 2;
-        cheese--;
-      }
+}
+function cookBar() {
+  if (cheese >= 1 && buns >= 2) {
+    if (time != 1000) {
+      time++;
+      document.getElementById("progressCook").value = time;
+    } else {
+      time = 0;
+      document.getElementById("progressCook").value = "0";
+      clearInterval(cookBurgerTime);
+      cookBurgerTime = null;
+      burgers++;
+      buns -= 2;
+      cheese--;
     }
   }
 }
