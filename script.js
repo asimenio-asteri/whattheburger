@@ -120,7 +120,7 @@ function cookBurger() {
         document.getElementById("progressCook").value = time;
       } else {
         time = 0;
-        document.getElementById("progressCook").value = 0;
+        document.getElementById("progressCook").value = "0";
         clearInterval(cookBurgerTime);
         cookBurgerTime = null;
         burgers++;
