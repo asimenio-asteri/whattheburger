@@ -14,6 +14,7 @@ var stocksBuns = 4;
 var time = 0;
 var resPt = 0;
 var cookBurgerTime = null;
+var resPattyTime = null;
 var updateCustomers = setInterval(updateOther, 10000);
 var updateAll = setInterval(update, 100);
 var updateComment = setInterval(comments, 15000);
@@ -132,27 +133,27 @@ function cookBar() {
   }
 }
 function progressBars() {
-  var resBar = null;
   var resPattyTime = null;
   var resBar = document.getElementById("resBar");
   var value = 0;
-  if (resPattyTime == null) {
+  if (resPattyTime == null && !pattyUnlock) {
     resPattyTime = setInterval(resPatty, 1000);
   } else {
     resBar.value = value;
   }
-  function resPatty() {
-    const resBar = document.getElementById("resBar")
-    var value = 0;
-    if (resPt >= 100) {
-      value += 0.001
-      resBar.value = value;
-    } else {
-      value = 0;
-      clearInterval(resPattyTime)
-      resPattyTime = null;
-      resPt -= 100;
-    }
+}
+function resPatty() {
+  var resBar = document.getElementById("resBar");
+  var value = 0;
+  if (resPt >= 100) {
+    value += 0.001;
+    resBar.value = value;
+  } else {
+    value = 0;
+    clearInterval(resPattyTime)
+    resPattyTime = null;
+    resPt -= 100;
+    pattyUnlock = true;
   }
 }
 function buy(food) {
@@ -175,16 +176,6 @@ function checkIngredients() {
     burgerType = 2;
   }
 };
-function startResearch(type) {
-  let resBar = document.getElementById("resBar")
-  let value = 0;
-  if (type == "hamburger" && resPt >= 100) {
-    for (i = 0; i < 1000; i++) {
-      value += 0.001;
-      resBar.value = value;
-    }
-  }
-}
 function openTab(pageName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("menu");
