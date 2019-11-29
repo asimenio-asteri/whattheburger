@@ -11,6 +11,7 @@ var cheese = 5;
 var patty = 0;
 var stocksCheese = 3;
 var stocksBuns = 4;
+var stocksPatty = 6;
 var time = 0;
 var resPt = 0;
 var cookBurgerTime = null;
@@ -21,6 +22,7 @@ var updateComment = setInterval(comments, 15000);
 var comment = "No comments yet...";
 var random = Math.random();
 var random2 = Math.random();
+var random3 = Math.random();
 var custMult = 10;
 function comments() {
   let num = Math.round(random * 10);
@@ -73,8 +75,6 @@ function update() {
   document.getElementById("comments").innerHTML = comment;
 }
 function updateOther() {
-  random = Math.random();
-  random2 = Math.random();
   let randomX = random * custMult;
   let mult = custMult / 2;
   if (randomX <= mult) {
@@ -90,15 +90,20 @@ function updateOther() {
   } else if (randomX = 0) {
     customers = 5;
   }
-  if (stocksCheese >= 1 && random2 >= 0.5) {
+  if (stocksCheese >= 1 && random2 > 0.5) {
     stocksCheese--;
   } else {
     stocksCheese++;
   }
-  if (random >= 0.5 && stocksBuns >= 1) {
+  if (random >= 0.5 && stocksBuns > 1) {
     stocksBuns--;
   } else {
     stocksBuns++;
+  }
+  if (random3 >= 0.5 && stocksPatty > 1) {
+    stocksPatty--;
+  } else {
+    stocksPatty++;
   }
 }
 function serveBurger() {
@@ -164,6 +169,9 @@ function buy(food) {
   } else if (food === 'buns' && money >= stocksBuns) {
     buns += 5;
     money -= stocksBuns;
+  } else if (food === 'patty' && money >= stocksPatty) {
+    patty += 5;
+    money -= stocksPatty;
   }
 }
 function checkIngredients() {
