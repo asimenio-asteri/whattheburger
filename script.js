@@ -73,6 +73,12 @@ function update() {
   document.getElementById("stonksCheese").innerHTML = "Price: " + stocksCheese;
   document.getElementById("stonksBuns").innerHTML = "Price: " + stocksBuns;
   document.getElementById("comments").innerHTML = comment;
+  if (pattyUnlock) {
+    let tags = document.getElementsByClassName("pattyBuy")
+    for (i = 0; i < tags.length; i++) {
+      tags[i].style.display = "block"
+    }
+  }
 }
 function updateOther() {
   let randomX = random * custMult;
