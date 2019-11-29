@@ -72,6 +72,7 @@ function update() {
   document.getElementById("pattyNum").innerHTML = "Patty: " + patty;
   document.getElementById("stonksCheese").innerHTML = "Price: " + stocksCheese;
   document.getElementById("stonksBuns").innerHTML = "Price: " + stocksBuns;
+  document.getElementById("stonksPatty").innerHTML = "Price: " + stocksPatty;
   document.getElementById("comments").innerHTML = comment;
   if (pattyUnlock) {
     let tags = document.getElementsByClassName("pattyBuy")
