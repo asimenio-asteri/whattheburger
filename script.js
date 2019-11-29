@@ -156,8 +156,8 @@ function resPatty() {
   var resBar = document.getElementById("resBar");
   var value = 0;
   if (resPt >= 100) {
-    if (value != 1) {
-      value += 0.001;
+    if (value != 1000) {
+      value += 1;
       resBar.value = value;
     } else {
       value = 0;
