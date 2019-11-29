@@ -1,2 +1,1 @@
-req 1: Update all files here to be compatible with the current game (copy paste Master HTML)
-req 2: Learn JS
+1: Update ur crap
