@@ -76,7 +76,7 @@ function update() {
   if (pattyUnlock) {
     let tags = document.getElementsByClassName("pattyBuy")
     for (i = 0; i < tags.length; i++) {
-      tags[i].style.display = "block"
+      tags[i].style.display = "block";
     }
   }
 }
