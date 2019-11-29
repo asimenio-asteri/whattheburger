@@ -153,14 +153,13 @@ function progressBars() {
   }
 }
 function resPatty() {
-  var resBar = document.getElementById("resBar");
-  var value = 0;
+  var researched = 0;
   if (resPt >= 100) {
-    if (value != 1000) {
-      value += 1;
-      resBar.value = value;
+    if (researched != 1000) {
+      researched += 1;
+      document.getElementById("resBar").value = researched;
     } else {
-      value = 0;
+      researched = 0;
       clearInterval(resPattyTime)
       resPattyTime = null;
       resPt -= 100;
