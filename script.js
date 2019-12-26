@@ -40,13 +40,13 @@ function comments() {
       comment = "What if I told you we live in a GAME!"
       break;
     case 4:
-      comment = "OMG SUCH GUCCI YEET 10/% STARS"
+      comment = "Hast du irgend käse?"
       break;
     case 5:
       comment = "This place is pretty cheap, and it tastes kinda good. 4/5 star."
       break;
     case 6:
-      comment = "Why no boterham? (english: sandwich)"
+      comment = "Why no boterham?"
       break;
     case 7:
       comment = "Needs more kinds of food than just burgers."

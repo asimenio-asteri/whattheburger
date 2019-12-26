@@ -8,10 +8,21 @@
 }
 .menuBtn {
   border: 1px solid black;
-  border-radius: 8px;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
   border-bottom: none;
   background-color: white;
 }
 .pattyBuy {
   display: none;
+}
+progress {
+  border-radius: 8px;
+}
+button {
+  border-radius: 8px;
+}
+body {
+  background-color: grey;
+  font-family: Arial;
 }
