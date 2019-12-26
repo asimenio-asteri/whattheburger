@@ -8,8 +8,8 @@
 }
 .menuBtn {
   border: 1px solid black;
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
+  border-top-right-radius: 8px !important;
+  border-top-left-radius: 8px !important;
   border-bottom: none;
   background-color: white;
 }
