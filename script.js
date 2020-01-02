@@ -1,12 +1,16 @@
 var burgers_0 = 0;
 var burgers_1 = 0;
 var burgers_2 = 0;
-var customers = 0;
+var customers_0 = 0;
+var customers_1 = 0;
+var customers_2 = 0;
 var money = 5;
 var burgerType = 0;
-// 0 = just cheese & buns (all have buns)
-// 1 = just patty
-// 2 = cheese & patty
+/* 
+0 = just cheese & buns (all have buns)
+1 = just patty
+2 = cheese & patty
+*/
 var pattyUnlock = false;
 var buns = 10;
 var cheese = 5;
@@ -66,9 +70,9 @@ function comments() {
 function update() {
   random = Math.random();
   random2 = Math.random();
-  document.getElementById("burgerNum").innerHTML = "Burgers: " + burgers_1;
+  document.getElementById("burgerNum").innerHTML = "Burgers: " + burgers_0;
   document.getElementById("moneyNum").innerHTML = "Money: " + money;
-  document.getElementById("customerNum").innerHTML = "Customers: " + customers;
+  document.getElementById("customerNum").innerHTML = "Customers: " + customers_0;
   document.getElementById("cheeseNum").innerHTML = "Cheese: " + cheese;
   document.getElementById("bunsNum").innerHTML = "Buns: " + buns;
   document.getElementById("pattyNum").innerHTML = "Patty: " + patty;
@@ -87,17 +91,17 @@ function updateOther() {
   let randomX = random * custMult;
   let mult = custMult / 2;
   if (randomX <= mult) {
-    customers = 0;
+    customers_0 = 0;
   } else if (randomX <= mult + 2) {
-    customers = 1;
+    customers_0 = 1;
   } else if (randomX <= mult + 4) {
-    customers = 2;
+    customers_0 = 2;
   } else if (randomX <= mult + 6) {
-    customers = 3; 
+    customers_0 = 3; 
   } else if (randomX <= mult + 8) {
-    customers = 4;
+    customers_0 = 4;
   } else if (randomX = 0) {
-    customers = 5;
+    customers_0 = 5;
   }
   if (stocksCheese >= 1 && random2 > 0.5) {
     stocksCheese--;
@@ -116,10 +120,10 @@ function updateOther() {
   }
 }
 function serveBurger() {
-  if (burgers_1 >= 1 && customers >= 1) {
-    burgers_1--;
+  if (burgers_0 >= 1 && customers_0 >= 1) {
+    burgers_0--;
     money += 5;
-    customers--;
+    customers_0--;
     resPt++;
   };
 };
@@ -140,7 +144,7 @@ function cookBar() {
       document.getElementById("progressCook").value = "0";
       clearInterval(cookBurgerTime);
       cookBurgerTime = null;
-      burgers_1++;
+      burgers_0++;
       buns -= 2;
       cheese--;
     }
