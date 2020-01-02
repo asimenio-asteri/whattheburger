@@ -167,7 +167,7 @@ function resPatty() {
       document.getElementById("resBar").value = researched;
     } else {
       researched = 0;
-      clearInterval(resPattyTime)
+      clearInterval(resPattyTime);
       resPattyTime = null;
       resPt -= 100;
       pattyUnlock = true;
