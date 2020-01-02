@@ -1,4 +1,6 @@
-var burgers = 0;
+var burgers_0 = 0;
+var burgers_1 = 0;
+var burgers_2 = 0;
 var customers = 0;
 var money = 5;
 var burgerType = 0;
@@ -64,7 +66,7 @@ function comments() {
 function update() {
   random = Math.random();
   random2 = Math.random();
-  document.getElementById("burgerNum").innerHTML = "Burgers: " + burgers;
+  document.getElementById("burgerNum").innerHTML = "Burgers: " + burgers_1;
   document.getElementById("moneyNum").innerHTML = "Money: " + money;
   document.getElementById("customerNum").innerHTML = "Customers: " + customers;
   document.getElementById("cheeseNum").innerHTML = "Cheese: " + cheese;
@@ -114,8 +116,8 @@ function updateOther() {
   }
 }
 function serveBurger() {
-  if (burgers >= 1 && customers >= 1) {
-    burgers--;
+  if (burgers_1 >= 1 && customers >= 1) {
+    burgers_1--;
     money += 5;
     customers--;
     resPt++;
@@ -138,7 +140,7 @@ function cookBar() {
       document.getElementById("progressCook").value = "0";
       clearInterval(cookBurgerTime);
       cookBurgerTime = null;
-      burgers++;
+      burgers_1++;
       buns -= 2;
       cheese--;
     }
