@@ -21,7 +21,3 @@ progress {
 button {
   border-radius: 8px;
 }
-body :not(progress) {
-  background-color: rgb(43, 43, 43);
-  font-family: Arial;
-}
