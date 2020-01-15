@@ -63,7 +63,7 @@ function timeClock() {
     str_min = timeMin.toString();
   }
   str_time = str_hour + ":" + str_min;
-  clock = str_time
+  clock.innerHTML = str_time
   document.getElementById("hour").style.transform = "rotate(" + (timeHour * 30) + "deg)";
   document.getElementById("min").style.transform = "rotate(" + (timeMin * 6);
 }
