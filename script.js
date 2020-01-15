@@ -47,14 +47,14 @@ function timeClock() {
     timeHour = 0;
   }
   if (timeHour < 10) {
-    str_hour = "0" + toString(timeHour);
+    str_hour = "0" + timeHour.toString();
   } else {
-    str_hour = toString(timeHour);
+    str_hour = timeHour.toString();
   }
   if (timeMin < 10) {
-    str_min = "0" + toString(timeMin);
+    str_min = "0" + timeMin.toString();
   } else {
-    str_min = toString(timeMin);
+    str_min = timeMin.toString();
   }
   str_time = str_hour + ":" + str_min;
   clock = str_time
