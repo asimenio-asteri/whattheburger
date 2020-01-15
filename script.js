@@ -64,8 +64,8 @@ function timeClock() {
   }
   str_time = str_hour + ":" + str_min;
   clock.innerHTML = str_time
-  document.getElementById("hour").style.transform = "rotate(" + (timeHour * 30) + "deg)";
-  document.getElementById("min").style.transform = "rotate(" + (timeMin * 6);
+  document.getElementById("hour").style.transform = "rotate(${timeHour * 30 + 90}deg)";
+  document.getElementById("min").style.transform = "rotate(${timeMin * 6 + 90})";
 }
 function comments() {
   let num = Math.round(random * 10);
