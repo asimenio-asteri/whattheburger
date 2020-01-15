@@ -25,11 +25,40 @@ var resPattyTime = null;
 var updateCustomers = setInterval(updateOther, 10000);
 var updateAll = setInterval(update, 100);
 var updateComment = setInterval(comments, 15000);
+var minuteTime = setInterval(timeClock, 100);
 var comment = "No comments yet...";
 var random = Math.random();
 var random2 = Math.random();
 var random3 = Math.random();
 var custMult = 10;
+var timeMin = 0;
+var timeHour = 0;
+function timeClock() {
+  let clock = document.getElementById("clock");
+  var str_hour = ""
+  var str_min = ""
+  var str_time = ""
+  timeMin++;
+  if (timeMin == 59) {
+    timeHour++;
+    timeMin = 0;
+  }
+  if (timeHour == 23) {
+    timeHour = 0;
+  }
+  if (timeHour < 10) {
+    str_hour = "0" + toString(timeHour);
+  } else {
+    str_hour = toString(timeHour);
+  }
+  if (timeMin < 10) {
+    str_min = "0" + toString(timeMin);
+  } else {
+    str_min = toString(timeMin);
+  }
+  str_time = str_hour + ":" + str_min;
+  clock = str_time
+}
 function comments() {
   let num = Math.round(random * 10);
   switch(num) {
