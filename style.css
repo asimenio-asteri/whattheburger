@@ -21,11 +21,25 @@ progress {
 button {
   border-radius: 8px;
 }
+.clockface {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-3px);
+}
 .hand {
   transform-origin: 100%;
   transform: rotate(90deg);
   transition: all 0.5s;
+  background: black;
+  width: 50%;
+  position: absolute;
 }
 #hour {
   transform: rotate(90deg) !important;
+  height: 4px;
+}
+#min {
+  transform: rotate(90deg) !important;
+  height: 6px;
 }
