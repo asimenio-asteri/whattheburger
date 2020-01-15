@@ -21,3 +21,11 @@ progress {
 button {
   border-radius: 8px;
 }
+.hand {
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition: all 0.5s;
+}
+#hour {
+  transform: rotate(90deg) !important;
+}
