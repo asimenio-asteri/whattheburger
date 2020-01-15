@@ -33,6 +33,12 @@ var random3 = Math.random();
 var custMult = 10;
 var timeMin = 0;
 var timeHour = 0;
+function save() {
+  localStorage.setItem('money', JSON.stringify(money));
+}
+function load() {
+  money = JSON.parse(localStorage.getItem('money'));
+}
 function timeClock() {
   let clock = document.getElementById("clock");
   var str_hour = ""
