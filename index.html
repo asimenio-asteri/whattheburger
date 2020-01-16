@@ -9,6 +9,7 @@
     <div id="menuButtons">
       <button class="menuBtn" onclick="openTab('basicMenu')" id="defaultOpen">Cook</button> 
       <button class="menuBtn" onclick="openTab('researchMenu')">Research</button>
+      <button class="menuBtn" onclick="openTab('optionsMenu')">Options</button>
     </div>
     <div id="basicMenu" class="menu">
       <p id="clock">00:00</p>
@@ -47,6 +48,10 @@
       <h3>Hamburger</h3>
       <p>You need to open shop in Hamburg first... but that's later. I guess you could just earn more money and do that.</p>
       <button onclick="progressBars()">Start Reasearching</button>
+    </div>
+    <div id="optionsMenu" class="menu">
+      <button>Switch to Light Theme</button>
+      <button>Switch to Dark Theme</button>  
     </div>
     <button onclick="save()">Save</button>
     <button onclick="load()">Load</button>
