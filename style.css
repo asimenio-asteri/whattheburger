@@ -10,10 +10,6 @@
 .pattyBuy {
   display: none;
 }
-progress {
-  border: 2px solid black;
-  border-radius: 8px;
-}
 button {
   border-radius: 8px;
 }
