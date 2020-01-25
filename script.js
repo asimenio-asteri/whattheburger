@@ -20,8 +20,8 @@ var stocksCheese = 3;
 var stocksBuns = 4;
 var stocksPatty = 6;
 var time = {
-  cook: 0;
-  rPatty: 0;
+  cook: 0,
+  rPatty: 0
 }
 var resPt = 0;
 var cookBurgerTime = null;
