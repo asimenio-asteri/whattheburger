@@ -42,9 +42,11 @@ var achievements = {
 }
 function save() {
   localStorage.setItem('money', JSON.stringify(money));
+  localStorage.setItem('served', JSON.stringify(customersServed));
 }
 function load() {
   money = JSON.parse(localStorage.getItem('money'));
+  customersServed = JSON.parse(localStorage.getItem('served'));
 }
 function aCheck() {
   if (customersServed >= 10) {
