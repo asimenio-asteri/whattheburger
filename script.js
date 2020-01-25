@@ -6,6 +6,7 @@ var customers_1 = 0;
 var customers_2 = 0;
 var money = 5;
 var burgerType = 0;
+var customersServed = 0;
 /* 
 0 = just cheese & buns (all have buns)
 1 = just patty
@@ -33,11 +34,22 @@ var random3 = Math.random();
 var custMult = 10;
 var timeMin = 0;
 var timeHour = 0;
+var achievements = {
+  serve10: false
+}
 function save() {
   localStorage.setItem('money', JSON.stringify(money));
 }
 function load() {
   money = JSON.parse(localStorage.getItem('money'));
+}
+function aCheck() {
+  if (customersServed >= 10) {
+    achievements.serve10 = true;
+    document.getElementById("a1bar").value = 10;
+  } else {
+    document.getElementById("a1bar").value = customersServed;
+  }
 }
 function timeClock() {
   let clock = document.getElementById("clock");
@@ -121,6 +133,9 @@ function update() {
       tags[i].style.display = "block";
     }
   }
+  if (achievements.serve10) {
+    //Enable rent
+  }
 }
 function updateOther() {
   let randomX = random * custMult;
@@ -160,6 +175,7 @@ function serveBurger() {
     money += 5;
     customers_0--;
     resPt++;
+    customersServed++;
   };
 };
 function cookBurger() {
