@@ -19,7 +19,10 @@ var patty = 0;
 var stocksCheese = 3;
 var stocksBuns = 4;
 var stocksPatty = 6;
-var time = 0;
+var time = {
+  cook: 0;
+  rPatty: 0;
+}
 var resPt = 0;
 var cookBurgerTime = null;
 var resPattyTime = null;
@@ -187,11 +190,11 @@ function cookBurger() {
 }
 function cookBar() {
   if (cheese >= 1 && buns >= 2) {
-    if (time != 1000) {
-      time++;
-      document.getElementById("progressCook").value = time;
+    if (time.cook != 1000) {
+      time.cook++;
+      document.getElementById("progressCook").value = time.cook;
     } else {
-      time = 0;
+      time.cook = 0;
       document.getElementById("progressCook").value = "0";
       clearInterval(cookBurgerTime);
       cookBurgerTime = null;
@@ -211,13 +214,12 @@ function progressBars() {
   }
 }
 function resPatty() {
-  var researched = 0;
   if (resPt >= 100) {
-    if (researched != 1000) {
-      researched += 1;
-      document.getElementById("resBar").value = researched;
+    if (time.rPatty != 1000) {
+      time.rPatty += 1;
+      document.getElementById("resBar").value = time.rPatty;
     } else {
-      researched = 0;
+      time.rPatty = 0;
       clearInterval(resPattyTime);
       resPattyTime = null;
       resPt -= 100;
