@@ -46,7 +46,7 @@ function save() {
 }
 function load() {
   money = JSON.parse(localStorage.getItem('money'));
-  customersServed = JSON.parse(localStorage.getItem('served'));
+  customersServed = JSON.parse(localStorage.getItem('served'))
 }
 function aCheck() {
   if (customersServed >= 10) {
