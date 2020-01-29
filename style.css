@@ -1,24 +1,19 @@
-.numbers {
-  border: 2px solid grey;
-  border-radius: 8px;
-  width: auto;
-}
-#researchMenu {
-  display: none;
-}
 .menuBtn {
   border: 1px solid black;
   border-radius: 8px 8px 0px 0px !important;
   border-bottom: none;
   background-color: white;
 }
+#aMenu, #researchMenu, #optionsMenu {
+  display: none;
+}
 .pattyBuy {
   display: none;
 }
-progress {
+button {
   border-radius: 8px;
 }
-button {
+.aa {
   border-radius: 8px;
 }
 #storyMode {

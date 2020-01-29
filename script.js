@@ -6,6 +6,7 @@ var customers_1 = 0;
 var customers_2 = 0;
 var money = 5;
 var burgerType = 0;
+var customersServed = 0;
 /* 
 0 = just cheese & buns (all have buns)
 1 = just patty
@@ -19,7 +20,10 @@ var patty = 0;
 var stocksCheese = 3;
 var stocksBuns = 4;
 var stocksPatty = 6;
-var time = 0;
+var time = {
+  cook: 0,
+  rPatty: 0
+}
 var resPt = 0;
 var cookBurgerTime = null;
 var resPattyTime = null;
@@ -34,13 +38,18 @@ var random3 = Math.random();
 var custMult = 10;
 var timeMin = 0;
 var timeHour = 0;
+var achievements = {
+  serve10: false
+}
 function save() {
   localStorage.setItem('money', JSON.stringify(money));
   localStorage.setItem('visted', JSON.stringify(visitedBefore));
+  localStorage.setItem('served', JSON.stringify(customersServed));
 }
 function load() {
   money = JSON.parse(localStorage.getItem('money'));
   visitedBefore = JSON.parse(localStorage.getItem('visited'));
+  customersServed = JSON.parse(localStorage.getItem('served'));
 }
 function storyPopup() {
   let node1 = document.createElement("p");
@@ -48,6 +57,18 @@ function storyPopup() {
   var text1 = document.createTextNode("What is your name? <br />");
   node1.appendChild(text1);
   document.getElementById("storyMode").appendChild(node1);
+}
+function load() {
+  money = JSON.parse(localStorage.getItem('money'));
+  customersServed = JSON.parse(localStorage.getItem('served'))
+}
+function aCheck() {
+  if (customersServed >= 10) {
+    achievements.serve10 = true;
+    document.getElementById("a1bar").value = 10;
+  } else {
+    document.getElementById("a1bar").value = customersServed;
+  }
 }
 function timeClock() {
   let clock = document.getElementById("clock");
@@ -134,6 +155,9 @@ function update() {
   if (!visitedBefore) {
     storyPopup();
   }
+  if (achievements.serve10) {
+    //Enable rent
+  }
 }
 function updateOther() {
   let randomX = random * custMult;
@@ -173,6 +197,7 @@ function serveBurger() {
     money += 5;
     customers_0--;
     resPt++;
+    customersServed++;
   };
 };
 function cookBurger() {
@@ -184,11 +209,11 @@ function cookBurger() {
 }
 function cookBar() {
   if (cheese >= 1 && buns >= 2) {
-    if (time != 1000) {
-      time++;
-      document.getElementById("progressCook").value = time;
+    if (time.cook != 1000) {
+      time.cook++;
+      document.getElementById("progressCook").value = time.cook;
     } else {
-      time = 0;
+      time.cook = 0;
       document.getElementById("progressCook").value = "0";
       clearInterval(cookBurgerTime);
       cookBurgerTime = null;
@@ -208,13 +233,12 @@ function progressBars() {
   }
 }
 function resPatty() {
-  var researched = 0;
   if (resPt >= 100) {
-    if (researched != 1000) {
-      researched += 1;
-      document.getElementById("resBar").value = researched;
+    if (time.rPatty != 1000) {
+      time.rPatty += 1;
+      document.getElementById("resBar").value = time.rPatty;
     } else {
-      researched = 0;
+      time.rPatty = 0;
       clearInterval(resPattyTime);
       resPattyTime = null;
       resPt -= 100;
