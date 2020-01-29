@@ -12,6 +12,7 @@ var burgerType = 0;
 2 = cheese & patty
 */
 var pattyUnlock = false;
+var visitedBefore = false;
 var buns = 10;
 var cheese = 5;
 var patty = 0;
@@ -35,9 +36,18 @@ var timeMin = 0;
 var timeHour = 0;
 function save() {
   localStorage.setItem('money', JSON.stringify(money));
+  localStorage.setItem('visted', JSON.stringify(visitedBefore));
 }
 function load() {
   money = JSON.parse(localStorage.getItem('money'));
+  visitedBefore = JSON.parse(localStorage.getItem('visited'));
+}
+function storyPopup() {
+  let node1 = document.createElement("p");
+  node1.setAttribute("id", "enterName");
+  var text1 = document.createTextNode("What is your name? <br />");
+  node1.appendChild(text1);
+  document.getElementById("storyMode").appendChild(node1);
 }
 function timeClock() {
   let clock = document.getElementById("clock");
@@ -120,6 +130,9 @@ function update() {
     for (i = 0; i < tags.length; i++) {
       tags[i].style.display = "block";
     }
+  }
+  if (!visitedBefore) {
+    storyPopup();
   }
 }
 function updateOther() {

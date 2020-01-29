@@ -21,3 +21,6 @@ progress {
 button {
   border-radius: 8px;
 }
+#storyMode {
+  background-color: #aaa8;
+}
