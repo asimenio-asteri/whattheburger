@@ -205,7 +205,7 @@ function cookBurger() {
   if (cookBurgerTime == null) {
     cookBurgerTime = setInterval(cookBar, 10);
   } else {
-    document.getElementById("progressCook").value = time;
+    document.getElementById("progressCook").value = time.cook;
   }
 }
 function cookBar() {

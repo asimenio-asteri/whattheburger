@@ -1,2 +1,2 @@
-v0.0.1α
+v0.0.0.1α
 - Put the first official release on GitHub
