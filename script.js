@@ -57,6 +57,7 @@ function storyPopup() {
   var text1 = document.createTextNode("What is your name? <br />");
   node1.appendChild(text1);
   document.getElementById("storyMode").appendChild(node1);
+  visitedBefore = true;
 }
 function load() {
   money = JSON.parse(localStorage.getItem('money'));
