@@ -38,26 +38,54 @@ var random3 = Math.random();
 var custMult = 10;
 var timeMin = 0;
 var timeHour = 0;
+var name = "";
 var achievements = {
   serve10: false
 }
+var story = {
+  storyPopup: function() {
+    var storyPopupDiv = document.getElementById("storyMode")
+    var whatName = document.createElement("p")
+    whatName.innerHTML = "What is your name?"
+    storyPopupDiv.appendChild(whatName)
+    var inputName = document.createElement("input")
+    inputName.setAttribute('type', 'text')
+    inputName.setAttribute('id', 'storyName')
+    inputName.setAttribute('name', 'storyName')
+    storyPopupDiv.appendChild(inputName)
+    var submitName = document.createElement("button")
+    submitName.innerHTML = "Start Working"
+    submitName.setAttribute('onClick', 'story.submitName()')
+    storyPopupDiv.appendChild(submitName)
+    visitedBefore = true
+  },
+  submitName: function() {
+    name = document.getElementById("storyName").value;
+    localStorage.setItem('name', JSON.stringify(name))
+  }
+}
 function save() {
-  localStorage.setItem('money', JSON.stringify(money));
-  localStorage.setItem('visted', JSON.stringify(visitedBefore));
-  localStorage.setItem('served', JSON.stringify(customersServed));
+  localStorage.setItem('money', JSON.stringify(money))
+  localStorage.setItem('visted', JSON.stringify(visitedBefore))
+  localStorage.setItem('served', JSON.stringify(customersServed))
 }
 function load() {
-  money = JSON.parse(localStorage.getItem('money'));
-  visitedBefore = JSON.parse(localStorage.getItem('visited'));
-  customersServed = JSON.parse(localStorage.getItem('served'));
+  money = JSON.parse(localStorage.getItem('money'))
+  visitedBefore = JSON.parse(localStorage.getItem('visited'))
+  customersServed = JSON.parse(localStorage.getItem('served'))
 }
 function storyPopup() {
-  let node1 = document.createElement("p");
-  node1.setAttribute("id", "enterName");
-  var text1 = document.createTextNode("What is your name? <br />");
-  node1.appendChild(text1);
-  document.getElementById("storyMode").appendChild(node1);
-  visitedBefore = true;
+  var whatName = document.createElement("p")
+  whatName.innerHTML = "What is your name?"
+  document.body.appendChild(whatName)
+  var inputName = document.createElement("input")
+  whatName.setAttribute('type', 'text')
+  whatName.setAttribute('id', 'storyName')
+  whatName.setAttribute('name', 'storyName')
+  var submitName = document.createElement("button")
+  submitName.innerHTML = "Start Working"
+  submitName.setAttribute('onClick', '')
+  visitedBefore = true
 }
 function load() {
   money = JSON.parse(localStorage.getItem('money'));
@@ -155,6 +183,8 @@ function update() {
   }
   if (!visitedBefore) {
     storyPopup();
+  } else {
+    name = JSON.parse(localStorage.getItem('name'))
   }
   if (achievements.serve10) {
     //Enable rent
@@ -235,14 +265,14 @@ function progressBars() {
 }
 function resPatty() {
   if (resPt >= 100) {
-    if (time.rPatty != 1000) {
+    if (time.rPatty > 1000) {
       time.rPatty += 1;
       document.getElementById("resBar").value = time.rPatty;
+      resPt -= 0.1
     } else {
       time.rPatty = 0;
       clearInterval(resPattyTime);
       resPattyTime = null;
-      resPt -= 100;
       pattyUnlock = true;
     }
   }

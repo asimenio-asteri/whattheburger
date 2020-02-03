@@ -4,15 +4,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## v0.0.1-c - 2020-2-2
+## [Unreleased]
+### Changed
+- The "What is your name?" at the top of the page
+### Added
+- An input section for your name
+- A submit button that logs your name into your localStorage
+- A boolean that checks if you've visited the page before (or file)
+
+### Changed
+- CHANGELOG.md to be a better changelog
+## [0.0.1-c] - 2020-2-2
 ### Changed
 - CHANGELOG.md to follow the rules of [keeping a changelog](https://keepachangelog.com/en/1.0.0/).
 
-## v0.0.1-b 2020-1-30
+## [0.0.1-b] 2020-1-30
 ### Fixed
 - The Achievement menu going into other menus
-- cookBurger() using the object time instead of time.cook
+- The Cook Burger button that didn't work
 
-## v0.0.1-a - 2020-1-30
+## [0.0.1-a] - 2020-1-30
 ### Added
 - The first official release on GitHub
