@@ -4,16 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.0.1] - 2020-2-3
 ### Changed
 - The "What is your name?" at the top of the page
+- CHANGELOG.md to be a better changelog
 ### Added
 - An input section for your name
 - A submit button that logs your name into your localStorage
 - A boolean that checks if you've visited the page before (or file)
 
-### Changed
-- CHANGELOG.md to be a better changelog
 ## [0.0.1-c] - 2020-2-2
 ### Changed
 - CHANGELOG.md to follow the rules of [keeping a changelog](https://keepachangelog.com/en/1.0.0/).
