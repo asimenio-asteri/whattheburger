@@ -74,19 +74,6 @@ function load() {
   visitedBefore = JSON.parse(localStorage.getItem('visited'))
   customersServed = JSON.parse(localStorage.getItem('served'))
 }
-function storyPopup() {
-  var whatName = document.createElement("p")
-  whatName.innerHTML = "What is your name?"
-  document.body.appendChild(whatName)
-  var inputName = document.createElement("input")
-  whatName.setAttribute('type', 'text')
-  whatName.setAttribute('id', 'storyName')
-  whatName.setAttribute('name', 'storyName')
-  var submitName = document.createElement("button")
-  submitName.innerHTML = "Start Working"
-  submitName.setAttribute('onClick', '')
-  visitedBefore = true
-}
 function load() {
   money = JSON.parse(localStorage.getItem('money'));
   customersServed = JSON.parse(localStorage.getItem('served'))
@@ -182,8 +169,7 @@ function update() {
     }
   }
   if (!visitedBefore) {
-    storyPopup();
-  } else {
+    story.storyPopup();
     name = JSON.parse(localStorage.getItem('name'))
   }
   if (achievements.serve10) {
