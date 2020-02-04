@@ -44,20 +44,20 @@ var achievements = {
 }
 var story = {
   storyPopup: function() {
-    var storyPopupDiv = document.getElementById("storyMode")
-    var whatName = document.createElement("p")
-    whatName.innerHTML = "What is your name?"
-    storyPopupDiv.appendChild(whatName)
-    var inputName = document.createElement("input")
-    inputName.setAttribute('type', 'text')
-    inputName.setAttribute('id', 'storyName')
-    inputName.setAttribute('name', 'storyName')
-    storyPopupDiv.appendChild(inputName)
-    var submitName = document.createElement("button")
-    submitName.innerHTML = "Start Working"
-    submitName.setAttribute('onClick', 'story.submitName()')
-    storyPopupDiv.appendChild(submitName)
-    visitedBefore = true
+    var storyPopupDiv = document.getElementById("storyMode");
+    var whatName = document.createElement("p");
+    whatName.innerHTML = "What is your name?";
+    storyPopupDiv.appendChild(whatName);
+    var inputName = document.createElement("input");
+    inputName.setAttribute('type', 'text');
+    inputName.setAttribute('id', 'storyName');
+    inputName.setAttribute('name', 'storyName');
+    storyPopupDiv.appendChild(inputName);
+    var submitName = document.createElement("button");
+    submitName.innerHTML = "Start Working";
+    submitName.setAttribute('onClick', 'story.submitName()');
+    storyPopupDiv.appendChild(submitName);
+    visitedBefore = true;
   },
   submitName: function() {
     name = document.getElementById("storyName").value;
