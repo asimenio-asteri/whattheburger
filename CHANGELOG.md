@@ -9,7 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The story popup using the old function
 ### Deleted
 - The old story popup function
-
+### Deprecated
+- Achievements (Will be added back later)
+### Added
+- More style to the story popup asking for your name
 ## [0.0.1] - 2020-2-3
 ### Changed
 - The "What is your name?" at the top of the page

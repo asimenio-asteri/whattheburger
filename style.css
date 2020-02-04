@@ -19,4 +19,6 @@ button {
 #storyMode {
   background-color: #aaa8;
   text-align: center;
+  vertical-align: center;
+  margin: 100%
 }

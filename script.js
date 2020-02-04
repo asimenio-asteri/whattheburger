@@ -56,7 +56,10 @@ var story = {
     var submitName = document.createElement("button");
     submitName.innerHTML = "Start Working";
     submitName.setAttribute('onClick', 'story.submitName()');
+    submitName.setAttribute('id', 'nameSubmit')
     storyPopupDiv.appendChild(submitName);
+    var breakLine = document.createElement("br")
+    document.getElementById('nameSubmit').insertBefore(breakLine)
     visitedBefore = true;
   },
   submitName: function() {
