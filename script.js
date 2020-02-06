@@ -39,9 +39,6 @@ var custMult = 10;
 var timeMin = 0;
 var timeHour = 0;
 var name = "";
-var achievements = {
-  serve10: false
-}
 var story = {
   storyPopup: function() {
     var storyPopupDiv = document.getElementById("storyMode");
@@ -165,6 +162,10 @@ function update() {
   document.getElementById("stonksBuns").innerHTML = "Price: " + stocksBuns;
   document.getElementById("stonksPatty").innerHTML = "Price: " + stocksPatty;
   document.getElementById("comments").innerHTML = comment;
+  name = JSON.parse(localStorage.getItem('name'))
+  if (name != "") {
+    visitedBefore = true
+  }
   if (pattyUnlock) {
     let tags = document.getElementsByClassName("pattyBuy")
     for (i = 0; i < tags.length; i++) {
@@ -173,10 +174,6 @@ function update() {
   }
   if (!visitedBefore) {
     story.storyPopup();
-    name = JSON.parse(localStorage.getItem('name'))
-  }
-  if (achievements.serve10) {
-    //Enable rent
   }
 }
 function updateOther() {
