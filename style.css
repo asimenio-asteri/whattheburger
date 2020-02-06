@@ -1,3 +1,6 @@
+body {
+  font-family: Arial;
+}
 .menuBtn {
   border: 1px solid black;
   border-radius: 8px 8px 0px 0px !important;

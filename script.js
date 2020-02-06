@@ -56,7 +56,7 @@ var story = {
     submitName.setAttribute('id', 'nameSubmit')
     storyPopupDiv.appendChild(submitName);
     var breakLine = document.createElement("br")
-    document.getElementById('nameSubmit').insertBefore(breakLine)
+    storyPopupDiv.insertBefore(breakLine, submitName)
     visitedBefore = true;
   },
   submitName: function() {
@@ -77,14 +77,6 @@ function load() {
 function load() {
   money = JSON.parse(localStorage.getItem('money'));
   customersServed = JSON.parse(localStorage.getItem('served'))
-}
-function aCheck() {
-  if (customersServed >= 10) {
-    achievements.serve10 = true;
-    document.getElementById("a1bar").value = 10;
-  } else {
-    document.getElementById("a1bar").value = customersServed;
-  }
 }
 function timeClock() {
   let clock = document.getElementById("clock");

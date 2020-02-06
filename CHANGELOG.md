@@ -5,15 +5,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- Font to Arial
 
-## [0.0.3] - 2020-2-3
-### Fixed
-- The unending "What is your name" on the far right of the game
+## [0.0.3] - 2020-2-6 [BUGGED]
 ### Removed
 - Achievements (once again, will be added later)
 - Achievement Menu
 
-## [0.0.2] - 2020-2-3
+## [0.0.2] - 2020-2-3 [BUGGED]
 ### Fixed
 - The story popup using the old function
 ### Deleted
