@@ -4,7 +4,7 @@
   border-bottom: none;
   background-color: white;
 }
-#aMenu, #researchMenu, #optionsMenu {
+#researchMenu, #optionsMenu {
   display: none;
 }
 .pattyBuy {
