@@ -238,27 +238,32 @@ function cookBar() {
     }
   }
 }
-function progressBars() {
-  var resBar = document.getElementById("resBar");
-  var value = 0;
-  if (resPattyTime == null && !pattyUnlock) {
-    resPattyTime = setInterval(resPatty, 1000);
-  } else {
-    resBar.value = value;
+function activate(func) {
+  if (func == "resPatty") {
+    if (resPattyTime == null && resPt >= 100) {
+      resPattyTime = setInterval(resPatty, 1000);
+    } else {
+      document.getElementById("resBar").value = time.rPatty;
+    }
   }
 }
 function resPatty() {
-  if (resPt >= 100) {
-    if (time.rPatty > 1000) {
-      time.rPatty += 1;
+  if (resPt >= 25) {
+    if (time.rPatty != 1000) {
+      time.rPatty++;
       document.getElementById("resBar").value = time.rPatty;
-      resPt -= 0.1
     } else {
       time.rPatty = 0;
+      resPt -= 25;
       clearInterval(resPattyTime);
       resPattyTime = null;
       pattyUnlock = true;
     }
+  } else {
+    clearInterval(resPattyTime);
+    resPattyTime = null;
+    time.rPatty = 0;
+    document.getElementById("resBar"). value = "0";
   }
 }
 function buy(food) {
