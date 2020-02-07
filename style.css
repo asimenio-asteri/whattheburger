@@ -7,7 +7,7 @@ body {
   border-bottom: none;
   background-color: white;
 }
-#researchMenu, #optionsMenu {
+#optionsMenu, #orderMenu, #researchMenu {
   display: none;
 }
 .pattyBuy {
@@ -16,11 +16,11 @@ body {
 button {
   border-radius: 8px;
 }
-.aa {
-  border-radius: 8px;
-}
 #storyMode {
   background-color: #aaa8;
   text-align: center;
   vertical-align: center;
+  height: 100%;
+  width: 100%;
+  position: fixed;
 }

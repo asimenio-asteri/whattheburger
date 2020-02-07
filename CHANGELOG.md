@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0] - 2020-2-6
+### Added
+- Favicon
+- Order object for planned customer orders
+- Order menu
+### Removed
+- Duplicate load function
+
 ## [0.0.4] - 2020-2-6
 ### Changed
 - Font to Arial

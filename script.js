@@ -39,6 +39,14 @@ var custMult = 10;
 var timeMin = 0;
 var timeHour = 0;
 var name = "";
+var order = {
+  nameList: ["Karen", "Dave", "Jacob", "Caroline", "Jack", "Kim", "Christopher", "David", "Rose", "Candy", "Jennifer", "Carlos", "Derek", "Connor", "Jimmy", "Hank", "Dennis", "Chara", "Sans"],
+  nameRandom: Math.floor(Math.random() * 19),
+  order: function() { 
+    let orderName = this.nameList[this.nameRandom]
+    //Insert an order card
+  }
+}
 var story = {
   storyPopup: function() {
     var storyPopupDiv = document.getElementById("storyMode");
@@ -62,6 +70,7 @@ var story = {
   submitName: function() {
     name = document.getElementById("storyName").value;
     localStorage.setItem('name', JSON.stringify(name))
+    document.getElementById("storyMode").style.display = "none"
   }
 }
 function save() {
@@ -71,11 +80,6 @@ function save() {
 }
 function load() {
   money = JSON.parse(localStorage.getItem('money'))
-  visitedBefore = JSON.parse(localStorage.getItem('visited'))
-  customersServed = JSON.parse(localStorage.getItem('served'))
-}
-function load() {
-  money = JSON.parse(localStorage.getItem('money'));
   customersServed = JSON.parse(localStorage.getItem('served'))
 }
 function timeClock() {
@@ -120,7 +124,7 @@ function comments() {
       comment = "What if I told you we live in a GAME!"
       break;
     case 4:
-      comment = "Hast du irgend käse?"
+      comment = "I need extra cheese!"
       break;
     case 5:
       comment = "This place is pretty cheap, and it tastes kinda good. 4/5 star."
@@ -138,7 +142,7 @@ function comments() {
       comment = "DaveRainbowin said this was a good place to go! He's right!"
       break;
     default:
-      comment = "what is stonks"
+      comment = "I want to see your manager!"
   }
 }
 function update() {
@@ -166,6 +170,8 @@ function update() {
   }
   if (!visitedBefore) {
     story.storyPopup();
+  } else {
+    document.getElementById("storyMode").style.display = "none"
   }
 }
 function updateOther() {
