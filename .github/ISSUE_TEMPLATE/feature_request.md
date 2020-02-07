@@ -9,6 +9,8 @@ assignees: ''
 
 # My suggestion
 I think you should add this mechanic to the game, and it should do [...]
+## Description
+When you click [...] is should [...]
 ## A chunk of code (if you know any or want to help the devs)
 function code() {
  var bla = "foo"
