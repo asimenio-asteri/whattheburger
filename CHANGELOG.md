@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2] - 2020-2-9
+### Added
+- A new issue format
+### Changed
+- The bug report format
+
 ## [0.1.1] - 2020-2-7
 ### Fixed
 - The research bar
