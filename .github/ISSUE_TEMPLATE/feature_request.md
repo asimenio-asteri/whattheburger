@@ -10,7 +10,7 @@ assignees: ''
 # My suggestion
 I think you should add this mechanic to the game, and it should do [...]
 ## Description
-When you click [...] is should [...]
+When you click [...] it should [...]
 ## A chunk of code (if you know any/want to help)
 ```js
 function code() {
