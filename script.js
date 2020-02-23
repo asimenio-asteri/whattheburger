@@ -182,6 +182,8 @@ function update() {
   name = JSON.parse(localStorage.getItem('name'))
   if (name != "") {
     visitedBefore = true
+  } else {
+    visitedBefore = false
   }
   if (pattyUnlock) {
     let tags = document.getElementsByClassName("pattyBuy")
@@ -197,7 +199,7 @@ function update() {
   if (customersServed >= 10) {
     a.serve10 = true;
   }
-  if (a.serve10) {
+  if (a.serve10 == true) {
     rentPaid = false;
   }
 }

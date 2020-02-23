@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0-c] - 2020-2-23
+### Changed
+- Some things in JS so the page doesn't freak out
+
 ## [0.2.0-b] - 2020-2-23
 ### Changed
 - Collapsed all things in script that are based on time into one object
