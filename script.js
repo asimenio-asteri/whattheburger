@@ -30,14 +30,12 @@ var resPattyTime = null;
 setInterval(updateOther, 10000);
 setInterval(update, 100);
 setInterval(comments, 15000);
-setInterval(timeClock, 100);
+setInterval(clock.timeClock, 100);
 var comment = "No comments yet...";
 var random = Math.random();
 var random2 = Math.random();
 var random3 = Math.random();
 var custMult = 10;
-var timeMin = 0;
-var timeHour = 0;
 var name = "";
 var order = {
   nameList: ["Karen", "Dave", "Jacob", "Caroline", "Jack", "Kim", "Christopher", "David", "Rose", "Candy", "Jennifer", "Carlos", "Derek", "Connor", "Jimmy", "Hank", "Dennis", "Chara", "Sans"],
@@ -73,6 +71,7 @@ var story = {
     document.getElementById("storyMode").style.display = "none"
   }
 }
+var rentPaid = true;
 var a = {
   serve10: false
 }
@@ -85,31 +84,49 @@ function load() {
   money = JSON.parse(localStorage.getItem('money'))
   customersServed = JSON.parse(localStorage.getItem('served'))
 }
-function timeClock() {
-  let clock = document.getElementById("clock");
-  var str_hour = ""
-  var str_min = ""
-  var str_time = ""
-  timeMin++;
-  if (timeMin == 59) {
-    timeHour++;
-    timeMin = 0;
+var clock = {
+  timeMin: 0,
+  timeHour: 0,
+  timeDay: 0,
+  timeMonth: 0,
+  timeClock: function() {
+    let clock = document.getElementById("clock");
+    var str_min = ""
+    var str_hour = ""
+    var str_day = ""
+    var str_time = ""
+    this.timeMin++;
+    if (this.timeMin == 59) {
+      this.timeHour++;
+      this.timeMin = 0;
+    }
+    if (this.timeHour == 23) {
+      this.timeHour = 0;
+      this.timeDay++;
+    }
+    if (this.timeDay == 29) {
+      this.timeDay = 0;
+      this.timeMonth++;
+    }
+    if (this.timeMonth == 11) {
+      this.timeMonth = 0;
+    }
+    if (timeHour < 10) {
+      str_hour = "0" + timeHour.toString();
+    } else {
+      str_hour = timeHour.toString();
+    }
+    if (timeMin < 10) {
+      str_min = "0" + timeMin.toString();
+    } else {
+      str_min = timeMin.toString();
+    }
+    str_time = str_hour + ":" + str_min;
+    clock.innerHTML = str_time
+    if (!rentPaid && this.timeMonth >= this.timeDay) {
+      // ^ make someone get angry that you aren't paying rent
+    }
   }
-  if (timeHour == 23) {
-    timeHour = 0;
-  }
-  if (timeHour < 10) {
-    str_hour = "0" + timeHour.toString();
-  } else {
-    str_hour = timeHour.toString();
-  }
-  if (timeMin < 10) {
-    str_min = "0" + timeMin.toString();
-  } else {
-    str_min = timeMin.toString();
-  }
-  str_time = str_hour + ":" + str_min;
-  clock.innerHTML = str_time
 }
 function comments() {
   let num = Math.round(random * 10);
@@ -181,7 +198,7 @@ function update() {
     a.serve10 = true;
   }
   if (a.serve10) {
-    // ^ enable rent
+    rentPaid = false;
   }
 }
 function updateOther() {

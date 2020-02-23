@@ -6,7 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.2.0-a]
+## [0.2.0-b] - 2020-2-23
+### Changed
+- Collapsed all things in script that are based on time into one object
+- As such, remade some of the function
+
+## [0.2.0-a] - 2020-2-23
 ### Added
 - Acheivements like I said I would (see 0.0.3)
 - Achievement div (ect.)

@@ -7,7 +7,7 @@ body {
   border-bottom: none;
   background-color: white;
 }
-#optionsMenu, #orderMenu, #researchMenu {
+#optionsMenu, #orderMenu, #researchMenu, #aMenu {
   display: none;
 }
 .pattyBuy {
@@ -25,6 +25,7 @@ button {
   position: fixed;
 }
 .achievement {
+  border: 1px solid black;
   border-radius: 8px;
   width: 25%;
   height: 25%;
