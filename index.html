@@ -14,6 +14,7 @@
       <button class="menuBtn" onclick="openTab('orderMenu')">Orders</button>
       <button class="menuBtn" onclick="openTab('researchMenu')">Research</button>
       <button class="menuBtn" onclick="openTab('optionsMenu')">Options</button>
+      <button class="menuBtn" onclick="openTab('aMenu')">Achievements</button>
     </div>
     <div id="basicMenu" class="menu">
       <p id="clock">00:00</p>
@@ -54,6 +55,12 @@
       <h3>Hamburger</h3>
       <p>You need to open shop in Hamburg first... but that's later. I guess you could just earn more money and do that.</p>
       <button onclick="activate('resPatty')">Start Reasearching</button>
+    </div>
+    <div id="aMenu" class="menu">
+      <div class="achievement">
+        <p class="aTitle">Serve 10 Customers</p> <br />
+        <progress id="serve10" value="0" max="10"></progress>
+      </div>
     </div>
     <div id="optionsMenu" class="menu">
       <button onClick="theme(0)">Switch to Light Theme</button> <br />

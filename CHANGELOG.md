@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0-a]
+### Added
+- Acheivements like I said I would (see 0.0.3)
+- Achievement div (ect.)
+### Changed
+- CSS file so the achievements don't look like garbage
+
 ## [0.1.3] - 2020-2-16
 ### Fixed
 - Grammar in feature_request.md

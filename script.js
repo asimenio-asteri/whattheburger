@@ -73,6 +73,9 @@ var story = {
     document.getElementById("storyMode").style.display = "none"
   }
 }
+var a = {
+  serve10: false
+}
 function save() {
   localStorage.setItem('money', JSON.stringify(money))
   localStorage.setItem('visted', JSON.stringify(visitedBefore))
@@ -158,6 +161,7 @@ function update() {
   document.getElementById("stonksBuns").innerHTML = "Price: " + stocksBuns;
   document.getElementById("stonksPatty").innerHTML = "Price: " + stocksPatty;
   document.getElementById("comments").innerHTML = comment;
+  document.getElementById("serve10").value = customersServed;
   name = JSON.parse(localStorage.getItem('name'))
   if (name != "") {
     visitedBefore = true
@@ -172,6 +176,12 @@ function update() {
     story.storyPopup();
   } else {
     document.getElementById("storyMode").style.display = "none"
+  }
+  if (customersServed >= 10) {
+    a.serve10 = true;
+  }
+  if (a.serve10) {
+    // ^ enable rent
   }
 }
 function updateOther() {

@@ -24,3 +24,12 @@ button {
   width: 100%;
   position: fixed;
 }
+.achievement {
+  border-radius: 8px;
+  width: 25%;
+  height: 25%;
+}
+.aTitle {
+  font-size: large;
+  text-align: center;
+}
