@@ -2,7 +2,7 @@ var burgers = 0;
 var customers = 0;
 var rand1 = Math.random();
 setInterval(customerGen, 10000);
-setInterval(updRand, 100)
+setInterval(updRand, 100);
 function customerGen() {
   let randCust = Math.floor(rand1 * 10);
   switch (randCust) {
