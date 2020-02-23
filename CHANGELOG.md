@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0-d] - 2020-2-23
+### Changed
+- The time object, I changed it so all of the things the function needs is located within instead
+
 ## [0.2.0-c] - 2020-2-23
 ### Changed
 - Some things in JS so the page doesn't freak out

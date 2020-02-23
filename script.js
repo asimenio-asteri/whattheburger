@@ -23,14 +23,14 @@ var stocksPatty = 6;
 var time = {
   cook: 0,
   rPatty: 0
-}
+};
 var resPt = 0;
 var cookBurgerTime = null;
 var resPattyTime = null;
 setInterval(updateOther, 10000);
 setInterval(update, 100);
 setInterval(comments, 15000);
-setInterval(clock.timeClock, 100);
+setInterval(timeClock, 100);
 var comment = "No comments yet...";
 var random = Math.random();
 var random2 = Math.random();
@@ -41,10 +41,10 @@ var order = {
   nameList: ["Karen", "Dave", "Jacob", "Caroline", "Jack", "Kim", "Christopher", "David", "Rose", "Candy", "Jennifer", "Carlos", "Derek", "Connor", "Jimmy", "Hank", "Dennis", "Chara", "Sans"],
   nameRandom: Math.floor(Math.random() * 19),
   order: function() { 
-    let orderName = this.nameList[this.nameRandom]
-    //Insert an order card
+    let orderName = this.nameList[this.nameRandom];
+    // ^ Insert an order card
   }
-}
+};
 var story = {
   storyPopup: function() {
     var storyPopupDiv = document.getElementById("storyMode");
@@ -59,110 +59,109 @@ var story = {
     var submitName = document.createElement("button");
     submitName.innerHTML = "Start Working";
     submitName.setAttribute('onClick', 'story.submitName()');
-    submitName.setAttribute('id', 'nameSubmit')
+    submitName.setAttribute('id', 'nameSubmit');
     storyPopupDiv.appendChild(submitName);
-    var breakLine = document.createElement("br")
-    storyPopupDiv.insertBefore(breakLine, submitName)
+    var breakLine = document.createElement("br");
+    storyPopupDiv.insertBefore(breakLine, submitName);
     visitedBefore = true;
   },
   submitName: function() {
     name = document.getElementById("storyName").value;
-    localStorage.setItem('name', JSON.stringify(name))
-    document.getElementById("storyMode").style.display = "none"
+    localStorage.setItem('name', JSON.stringify(name));
+    document.getElementById("storyMode").style.display = "none";
   }
-}
+};
 var rentPaid = true;
-var a = {
+var achieve = {
   serve10: false
-}
+};
 function save() {
-  localStorage.setItem('money', JSON.stringify(money))
-  localStorage.setItem('visted', JSON.stringify(visitedBefore))
-  localStorage.setItem('served', JSON.stringify(customersServed))
+  localStorage.setItem('money', JSON.stringify(money));
+  localStorage.setItem('visted', JSON.stringify(visitedBefore));
+  localStorage.setItem('served', JSON.stringify(customersServed));
 }
 function load() {
-  money = JSON.parse(localStorage.getItem('money'))
-  customersServed = JSON.parse(localStorage.getItem('served'))
+  money = JSON.parse(localStorage.getItem('money'));
+  customersServed = JSON.parse(localStorage.getItem('served'));
 }
-var clock = {
-  timeMin: 0,
-  timeHour: 0,
-  timeDay: 0,
-  timeMonth: 0,
-  timeClock: function() {
-    let clock = document.getElementById("clock");
-    var str_min = ""
-    var str_hour = ""
-    var str_day = ""
-    var str_time = ""
-    this.timeMin++;
-    if (this.timeMin == 59) {
-      this.timeHour++;
-      this.timeMin = 0;
-    }
-    if (this.timeHour == 23) {
-      this.timeHour = 0;
-      this.timeDay++;
-    }
-    if (this.timeDay == 29) {
-      this.timeDay = 0;
-      this.timeMonth++;
-    }
-    if (this.timeMonth == 11) {
-      this.timeMonth = 0;
-    }
-    if (timeHour < 10) {
-      str_hour = "0" + timeHour.toString();
-    } else {
-      str_hour = timeHour.toString();
-    }
-    if (timeMin < 10) {
-      str_min = "0" + timeMin.toString();
-    } else {
-      str_min = timeMin.toString();
-    }
-    str_time = str_hour + ":" + str_min;
-    clock.innerHTML = str_time
-    if (!rentPaid && this.timeMonth >= this.timeDay) {
-      // ^ make someone get angry that you aren't paying rent
-    }
+var timeMin = 0;
+var timeHour = 0;
+var timeDay = 0;
+var timeMonth = 0;
+function timeClock() {
+  let clock = document.getElementById("clock");
+  let str_min = "";
+  let str_hour = "";
+  let str_day = "";
+  let str_month = "";
+  let str_time = "";
+  timeMin++;
+  if (timeMin == 59) {
+    timeHour++;
+    timeMin = 0;
+  }
+  if (timeHour == 23) {
+    timeHour = 0;
+    timeDay++;
+  }
+  if (timeDay == 29) {
+    timeDay = 0;
+    timeMonth++;
+  }
+  if (timeMonth == 11) {
+    timeMonth = 0;
+  }
+  if (timeHour < 10) {
+    str_hour = "0" + timeHour.toString();
+  } else {
+    str_hour = timeHour.toString();
+  }
+  if (timeMin < 10) {
+    str_min = "0" + timeMin.toString();
+  } else {
+    str_min = timeMin.toString();
+  }
+  str_time = str_hour + ":" + str_min;
+  clock.innerHTML = str_time;
+  if (!rentPaid && timeMonth >= timeDay) {
+    // ^ make someone get angry that you aren't paying rent
   }
 }
 function comments() {
   let num = Math.round(random * 10);
   switch(num) {
     case 0:
-      comment = "This tastes horrible! 1/5 stars."
+      comment = "This tastes horrible! 1/5 stars.";
       break;
     case 1:
-      comment = "I don't like it. 2/5 stars..."
+      comment = "I don't like it. 2/5 stars...";
       break;
     case 2:
-      comment = "I guess I'll eat it... 3/5"
+      comment = "I guess I'll eat it... 3/5";
       break;
     case 3:
-      comment = "What if I told you we live in a GAME!"
+      comment = "What if I told you we live in a GAME!";
       break;
     case 4:
-      comment = "I need extra cheese!"
+      comment = "I need extra cheese!";
       break;
     case 5:
-      comment = "This place is pretty cheap, and it tastes kinda good. 4/5 star."
+      comment = "This place is pretty cheap, and it tastes kinda good. 4/5 star.";
       break;
     case 6:
-      comment = "Why no boterham?"
+      comment = "Why no boterham?";
       break;
     case 7:
-      comment = "Needs more kinds of food than just burgers."
+      comment = "Needs more kinds of food than just burgers.";
       break;
     case 8:
-      comment = "wtf happened to my toilet"
+      comment = "wtf happened to my toilet";
       break;
     case 9:
-      comment = "DaveRainbowin said this was a good place to go! He's right!"
+      comment = "DaveRainbowin said this was a good place to go! He's right!";
       break;
     default:
-      comment = "I want to see your manager!"
+      comment = "I want to see your manager!";
   }
 }
 function update() {
@@ -179,46 +178,39 @@ function update() {
   document.getElementById("stonksPatty").innerHTML = "Price: " + stocksPatty;
   document.getElementById("comments").innerHTML = comment;
   document.getElementById("serve10").value = customersServed;
-  name = JSON.parse(localStorage.getItem('name'))
-  if (name != "") {
-    visitedBefore = true
+  name = JSON.parse(localStorage.getItem('name'));
+  visitedBefore = (name ? true : false);
+  if (!visitedBefore) {
+    story.storyPopup();
   } else {
-    visitedBefore = false
+    document.getElementById("storyMode").style.display = "none";
   }
   if (pattyUnlock) {
-    let tags = document.getElementsByClassName("pattyBuy")
+    let tags = document.getElementsByClassName("pattyBuy");
     for (i = 0; i < tags.length; i++) {
       tags[i].style.display = "block";
     }
   }
-  if (!visitedBefore) {
-    story.storyPopup();
-  } else {
-    document.getElementById("storyMode").style.display = "none"
-  }
   if (customersServed >= 10) {
-    a.serve10 = true;
+    achieve.serve10 = true;
+  } else {
+    achieve.serve10 = false;
   }
-  if (a.serve10 == true) {
+  if (achieve.serve10) {
     rentPaid = false;
   }
 }
 function updateOther() {
   let randomX = random * custMult;
   let mult = custMult / 2;
-  if (randomX <= mult) {
-    customers_0 = 0;
-  } else if (randomX <= mult + 2) {
-    customers_0 = 1;
-  } else if (randomX <= mult + 4) {
-    customers_0 = 2;
-  } else if (randomX <= mult + 6) {
-    customers_0 = 3; 
-  } else if (randomX <= mult + 8) {
-    customers_0 = 4;
-  } else if (randomX = 0) {
-    customers_0 = 5;
-  }
+  customers_0 = (
+    (randomX <= mult) ? 0
+    : (randomX <= mult + 2) ? 1
+    : (randomX <= mult + 4) ? 2
+    : (randomX <= mult + 6) ? 3
+    : (randomX <= mult + 8) ? 4
+    : 5
+  );
   if (stocksCheese >= 1 && random2 > 0.5) {
     stocksCheese--;
   } else {
@@ -242,8 +234,8 @@ function serveBurger() {
     customers_0--;
     resPt++;
     customersServed++;
-  };
-};
+  }
+}
 function cookBurger() {
   if (cookBurgerTime == null) {
     cookBurgerTime = setInterval(cookBar, 10);
@@ -317,7 +309,7 @@ function checkIngredients() {
   } else if (cheeseCheck && pattyCheck) {
     burgerType = 2;
   }
-};
+}
 function openTab(pageName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("menu");
