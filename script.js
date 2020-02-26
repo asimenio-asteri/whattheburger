@@ -211,21 +211,9 @@ function updateOther() {
     : (randomX <= mult + 8) ? 4
     : 5
   );
-  if (stocksCheese >= 1 && random2 > 0.5) {
-    stocksCheese--;
-  } else {
-    stocksCheese++;
-  }
-  if (random >= 0.5 && stocksBuns > 1) {
-    stocksBuns--;
-  } else {
-    stocksBuns++;
-  }
-  if (random3 >= 0.5 && stocksPatty > 1) {
-    stocksPatty--;
-  } else {
-    stocksPatty++;
-  }
+  stocksCheese = (stocksCheese >= 1 && random2 > 0.5) ? stocksCheese - 1 : stocksCheese + 1;
+  stocksBuns = (random >= 0.5 && stocksBuns > 1) ? stocksBuns - 1 : stocksBuns + 1;
+  stocksPatty = (random3 >= 0.5 && stocksPatty > 1) ? stocksPatty - 1 : stocksPatty + 1;
 }
 function serveBurger() {
   if (burgers_0 >= 1 && customers_0 >= 1) {
@@ -308,6 +296,23 @@ function checkIngredients() {
     burgerType = 1;
   } else if (cheeseCheck && pattyCheck) {
     burgerType = 2;
+  }
+}
+var sheet = document.styleSheets[0];
+var rules = sheet.cssRules || sheet.rules;
+function theme(type) {
+  if (type == 0) {
+    rules[0].style.color = "white";
+    rules[0].style.backgroundColor = "#2C2F33";
+    rules[1].style.color = "white";
+    rules[1].style.backgroundColor = "#2C2F33";
+    rules[1].style.borderColor = "white";
+  } else if (type == 1) {
+    rules[0].style.color = "black";
+    rules[0].style.backgroundColor = "white";
+    rules[1].style.color = "black";
+    rules[1].style.backgroundColor = "white";
+    rules[1].style.borderColor = "black";
   }
 }
 function openTab(pageName) {
