@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0-e] - 2020-2-25
+### Added
+- Functionality to the light/dark theme buttons (which cured one of the github issues)
+### Changed
+- Which theme is 0 and which is 1 (in js, 0 = dark)
+
 ## [0.2.0-d] - 2020-2-23
 ### Changed
 - The time object, I changed it so all of the things the function needs is located within instead
