@@ -69,7 +69,8 @@ var story = {
     name = document.getElementById("storyName").value;
     localStorage.setItem('name', JSON.stringify(name));
     document.getElementById("storyMode").style.display = "none";
-  }
+  },
+  storyPopped: false
 };
 var rentPaid = true;
 var achieve = {
@@ -184,6 +185,7 @@ function update() {
     story.storyPopup();
   } else {
     document.getElementById("storyMode").style.display = "none";
+    story.storyPopped = true;
   }
   if (pattyUnlock) {
     let tags = document.getElementsByClassName("pattyBuy");
