@@ -181,9 +181,10 @@ function update() {
   document.getElementById("serve10").value = customersServed;
   name = JSON.parse(localStorage.getItem('name'));
   visitedBefore = (name ? true : false);
-  if (!visitedBefore) {
+  if (!visitedBefore && !story.storyPopped) {
     story.storyPopup();
-  } else {
+    story.storyPopped = true;
+  } else if (!story.storyPopped) {
     document.getElementById("storyMode").style.display = "none";
     story.storyPopped = true;
   }
