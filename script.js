@@ -252,7 +252,7 @@ function cookBar() {
 }
 function activate(func) {
   if (func == "resPatty") {
-    if (resPattyTime == null && resPt >= 100) {
+    if (resPattyTime == null && resPt >= 10) {
       resPattyTime = setInterval(resPatty, 1000);
     } else {
       document.getElementById("resBar").value = time.rPatty;
