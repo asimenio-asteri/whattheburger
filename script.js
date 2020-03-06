@@ -69,6 +69,7 @@ var story = {
     name = document.getElementById("storyName").value;
     localStorage.setItem('name', JSON.stringify(name));
     document.getElementById("storyMode").style.display = "none";
+    document.getElementById("storyMode").style.backgroundColor = "#0000";
   },
   storyPopped: false
 };
@@ -179,6 +180,7 @@ function update() {
   document.getElementById("stonksPatty").innerHTML = "Price: " + stocksPatty;
   document.getElementById("comments").innerHTML = comment;
   document.getElementById("serve10").value = customersServed;
+  visitedBefore = false;
   name = JSON.parse(localStorage.getItem('name'));
   visitedBefore = (name ? true : false);
   if (!visitedBefore && !story.storyPopped) {
@@ -186,6 +188,7 @@ function update() {
     story.storyPopped = true;
   } else if (!story.storyPopped) {
     document.getElementById("storyMode").style.display = "none";
+    document.getElementById("storyMode").style.backgroundColor = "#0000";
     story.storyPopped = true;
   }
   if (pattyUnlock) {
