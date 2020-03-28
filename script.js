@@ -38,11 +38,22 @@ var random3 = Math.random();
 var custMult = 10;
 var name = "";
 var order = {
-  nameList: ["Karen", "Dave", "Jacob", "Caroline", "Jack", "Kim", "Christopher", "David", "Rose", "Candy", "Jennifer", "Carlos", "Derek", "Connor", "Jimmy", "Hank", "Dennis", "Chara", "Sans"],
-  nameRandom: Math.floor(Math.random() * 19),
+  nameList: ["Karen", "Dave", "Jacob", "Caroline", "Jack", "Kim", "Christopher", "David", "Rose", "Jennifer", "Carlos", "Derek", "Connor", "Jimmy", "Hank", "Dennis"],
+  nameRandom: Math.floor(Math.random() * 16),
+  orderFlip: Math.random(),
+  orderRandom: (pattyUnlock ? (orderFlip >= 0.5 ? "patty" : "cheese") : "cheese"),
+  ordersToday: 1,
   order: function() { 
     let orderName = this.nameList[this.nameRandom];
-    // ^ Insert an order card
+    let cardTemplate = `
+    <h3>#${this.ordersToday}</h3>
+    <p>Customer: ${orderName} <br />Order: ${this.orderRandom}</p>`;
+    this.nameRandom = Math.floor(Math.random() * 16);
+    var orderSect = document.getElementById("orderMenu");
+    var card = document.createElement("div");
+    card.innerHTML = cardTemplate;
+    orderSect.appendChild(card);
+    this.ordersToday++;
   }
 };
 var story = {
@@ -304,8 +315,7 @@ function checkIngredients() {
     burgerType = 2;
   }
 }
-var sheet = document.styleSheets[0];
-var rules = sheet.cssRules || sheet.rules;
+var rules = document.styleSheets[0].cssRules;
 function theme(type) {
   if (type == 0) {
     rules[0].style.color = "white";
