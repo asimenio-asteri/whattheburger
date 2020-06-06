@@ -49,7 +49,7 @@ var order = {
     <h3>#${this.ordersToday}</h3>
     <p>Customer: ${orderName} <br />Order: ${this.orderRandom}</p>`;
     this.nameRandom = Math.floor(Math.random() * 16);
-    var orderSect = document.getElementById("orderMenu");
+    var orderSect = get("orderMenu");
     var card = document.createElement("div");
     card.innerHTML = cardTemplate;
     orderSect.appendChild(card);
@@ -58,7 +58,7 @@ var order = {
 };
 var story = {
   storyPopup: function() {
-    var storyPopupDiv = document.getElementById("storyMode");
+    var storyPopupDiv = get("storyMode");
     var whatName = document.createElement("p");
     whatName.innerHTML = "What is your name?";
     storyPopupDiv.appendChild(whatName);
@@ -77,10 +77,10 @@ var story = {
     visitedBefore = true;
   },
   submitName: function() {
-    name = document.getElementById("storyName").value;
+    name = get("storyName").value;
     localStorage.setItem('name', JSON.stringify(name));
-    document.getElementById("storyMode").style.display = "none";
-    document.getElementById("storyMode").style.backgroundColor = "#0000";
+    get("storyMode").style.display = "none";
+    get("storyMode").style.backgroundColor = "#0000";
   },
   storyPopped: false
 };
@@ -102,7 +102,7 @@ var timeHour = 0;
 var timeDay = 0;
 var timeMonth = 0;
 function timeClock() {
-  let clock = document.getElementById("clock");
+  let clock = get("clock");
   let str_min = "";
   let str_hour = "";
   let str_day = "";
@@ -180,17 +180,17 @@ function comments() {
 function update() {
   random = Math.random();
   random2 = Math.random();
-  document.getElementById("burgerNum").innerHTML = "Burgers: " + burgers_0;
-  document.getElementById("moneyNum").innerHTML = "Money: " + money;
-  document.getElementById("customerNum").innerHTML = "Customers: " + customers_0;
-  document.getElementById("cheeseNum").innerHTML = "Cheese: " + cheese;
-  document.getElementById("bunsNum").innerHTML = "Buns: " + buns;
-  document.getElementById("pattyNum").innerHTML = "Patty: " + patty;
-  document.getElementById("stonksCheese").innerHTML = "Price: " + stocksCheese;
-  document.getElementById("stonksBuns").innerHTML = "Price: " + stocksBuns;
-  document.getElementById("stonksPatty").innerHTML = "Price: " + stocksPatty;
-  document.getElementById("comments").innerHTML = comment;
-  document.getElementById("serve10").value = customersServed;
+  get("burgerNum").innerHTML = "Burgers: " + burgers_0;
+  get("moneyNum").innerHTML = "Money: " + money;
+  get("customerNum").innerHTML = "Customers: " + customers_0;
+  get("cheeseNum").innerHTML = "Cheese: " + cheese;
+  get("bunsNum").innerHTML = "Buns: " + buns;
+  get("pattyNum").innerHTML = "Patty: " + patty;
+  get("stonksCheese").innerHTML = "Price: " + stocksCheese;
+  get("stonksBuns").innerHTML = "Price: " + stocksBuns;
+  get("stonksPatty").innerHTML = "Price: " + stocksPatty;
+  get("comments").innerHTML = comment;
+  get("serve10").value = customersServed;
   visitedBefore = false;
   name = JSON.parse(localStorage.getItem('name'));
   visitedBefore = (name ? true : false);
@@ -198,8 +198,8 @@ function update() {
     story.storyPopup();
     story.storyPopped = true;
   } else if (!story.storyPopped) {
-    document.getElementById("storyMode").style.display = "none";
-    document.getElementById("storyMode").style.backgroundColor = "#0000";
+    get("storyMode").style.display = "none";
+    get("storyMode").style.backgroundColor = "#0000";
     story.storyPopped = true;
   }
   if (pattyUnlock) {
@@ -245,17 +245,17 @@ function cookBurger() {
   if (cookBurgerTime == null) {
     cookBurgerTime = setInterval(cookBar, 10);
   } else {
-    document.getElementById("progressCook").value = time.cook;
+    get("progressCook").value = time.cook;
   }
 }
 function cookBar() {
   if (cheese >= 1 && buns >= 2) {
     if (time.cook != 1000) {
       time.cook++;
-      document.getElementById("progressCook").value = time.cook;
+      get("progressCook").value = time.cook;
     } else {
       time.cook = 0;
-      document.getElementById("progressCook").value = "0";
+      get("progressCook").value = "0";
       clearInterval(cookBurgerTime);
       cookBurgerTime = null;
       burgers_0++;
@@ -269,7 +269,7 @@ function activate(func) {
     if (resPattyTime == null && resPt >= 10) {
       resPattyTime = setInterval(resPatty, 1000);
     } else {
-      document.getElementById("resBar").value = time.rPatty;
+      get("resBar").value = time.rPatty;
     }
   }
 }
@@ -277,7 +277,7 @@ function resPatty() {
   if (resPt >= 25) {
     if (time.rPatty != 1000) {
       time.rPatty++;
-      document.getElementById("resBar").value = time.rPatty;
+      get("resBar").value = time.rPatty;
     } else {
       time.rPatty = 0;
       resPt -= 25;
@@ -289,7 +289,7 @@ function resPatty() {
     clearInterval(resPattyTime);
     resPattyTime = null;
     time.rPatty = 0;
-    document.getElementById("resBar"). value = "0";
+    get("resBar"). value = "0";
   }
 }
 function buy(food) {
@@ -305,8 +305,8 @@ function buy(food) {
   }
 }
 function checkIngredients() {
-  let cheeseCheck = document.getElementById("checkCheese").checked; 
-  let pattyCheck = document.getElementById("checkPatty").checked;
+  let cheeseCheck = get("checkCheese").checked; 
+  let pattyCheck = get("checkPatty").checked;
   if (cheeseCheck && !pattyCheck) {
     burgerType = 0;
   } else if (!cheeseCheck && pattyCheck) {
@@ -341,5 +341,8 @@ function openTab(pageName) {
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].style.backgroundColor = "";
   }
-  document.getElementById(pageName).style.display = "block";
+  get(pageName).style.display = "block";
+}
+function get(id) {
+  return document.getElementById(id);
 }
