@@ -31,6 +31,7 @@ setInterval(updateOther, 10000);
 setInterval(update, 100);
 setInterval(comments, 15000);
 setInterval(timeClock, 100);
+setInterval(save, 5000);
 var comment = "No comments yet...";
 var random = Math.random();
 var random2 = Math.random();
@@ -146,16 +147,16 @@ function comments() {
     case 0:
       comment = "This tastes horrible! 1/5 stars.";
       break;
-    case 1:
-      comment = "I don't like it. 2/5 stars...";
+      case 1:
+        comment = "I don't like it. 2/5 stars...";
       break;
-    case 2:
-      comment = "I guess I'll eat it... 3/5";
-      break;
+      case 2:
+        comment = "I guess I'll eat it... 3/5";
+        break;
     case 3:
       comment = "What if I told you we live in a GAME!";
       break;
-    case 4:
+      case 4:
       comment = "I need extra cheese!";
       break;
     case 5:
@@ -167,30 +168,31 @@ function comments() {
     case 7:
       comment = "Needs more kinds of food than just burgers.";
       break;
-    case 8:
-      comment = "wtf happened to my toilet";
+      case 8:
+        comment = "wtf happened to my toilet";
       break;
-    case 9:
+      case 9:
       comment = "DaveRainbowin said this was a good place to go! He's right!";
       break;
     default:
       comment = "I want to see your manager!";
+    }
   }
-}
 function update() {
   random = Math.random();
   random2 = Math.random();
-  get("burgerNum").innerHTML = "Burgers: " + burgers_0;
-  get("moneyNum").innerHTML = "Money: " + money;
-  get("customerNum").innerHTML = "Customers: " + customers_0;
-  get("cheeseNum").innerHTML = "Cheese: " + cheese;
-  get("bunsNum").innerHTML = "Buns: " + buns;
-  get("pattyNum").innerHTML = "Patty: " + patty;
-  get("stonksCheese").innerHTML = "Price: " + stocksCheese;
-  get("stonksBuns").innerHTML = "Price: " + stocksBuns;
-  get("stonksPatty").innerHTML = "Price: " + stocksPatty;
+  get("burgerNum").innerHTML = `Burgers: ${burgers_0}`;
+  get("moneyNum").innerHTML = `Money: ${money}`;
+  get("customerNum").innerHTML = `Customers: ${customers_0}`;
+  get("cheeseNum").innerHTML = `Cheese: ${cheese}`;
+  get("bunsNum").innerHTML = `Buns: ${buns}`;
+  get("pattyNum").innerHTML = `Patty: ${patty}`;
+  get("stonksCheese").innerHTML = `Price: ${stocksCheese}`;
+  get("stonksBuns").innerHTML = `Price: ${stocksBuns}`;
+  get("stonksPatty").innerHTML = `Price: ${stocksPatty}`;
   get("comments").innerHTML = comment;
   get("serve10").value = customersServed;
+  get("rpCount").innerHTML = `${resPt} RP`;
   visitedBefore = false;
   name = JSON.parse(localStorage.getItem('name'));
   visitedBefore = (name ? true : false);
@@ -220,14 +222,7 @@ function update() {
 function updateOther() {
   let randomX = random * custMult;
   let mult = custMult / 2;
-  customers_0 = (
-    (randomX <= mult) ? 0
-    : (randomX <= mult + 2) ? 1
-    : (randomX <= mult + 4) ? 2
-    : (randomX <= mult + 6) ? 3
-    : (randomX <= mult + 8) ? 4
-    : 5
-  );
+  customers_0 = ((randomX <= mult) ? 0 : (randomX <= mult + 2) ? 1 : (randomX <= mult + 4) ? 2 : (randomX <= mult + 6) ? 3 : (randomX <= mult + 8) ? 4 : 5);
   stocksCheese = (stocksCheese >= 1 && random2 > 0.5) ? stocksCheese - 1 : stocksCheese + 1;
   stocksBuns = (random >= 0.5 && stocksBuns > 1) ? stocksBuns - 1 : stocksBuns + 1;
   stocksPatty = (random3 >= 0.5 && stocksPatty > 1) ? stocksPatty - 1 : stocksPatty + 1;
@@ -345,4 +340,7 @@ function openTab(pageName) {
 }
 function get(id) {
   return document.getElementById(id);
+}
+function init() {
+  load();
 }
