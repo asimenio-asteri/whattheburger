@@ -223,9 +223,9 @@ function updateOther() {
   let randomX = random * custMult;
   let mult = custMult / 2;
   customers_0 = ((randomX <= mult) ? 0 : (randomX <= mult + 2) ? 1 : (randomX <= mult + 4) ? 2 : (randomX <= mult + 6) ? 3 : (randomX <= mult + 8) ? 4 : 5);
-  stocksCheese = (stocksCheese >= 1 && random2 > 0.5) ? stocksCheese - 1 : stocksCheese + 1;
-  stocksBuns = (random >= 0.5 && stocksBuns > 1) ? stocksBuns - 1 : stocksBuns + 1;
-  stocksPatty = (random3 >= 0.5 && stocksPatty > 1) ? stocksPatty - 1 : stocksPatty + 1;
+  stocksCheese = (stocksCheese > 1 && random2 > 0.5) ? stocksCheese - 1 : stocksCheese + 1;
+  stocksBuns = (stocksBuns > 1 && random >= 0.5) ? stocksBuns - 1 : stocksBuns + 1;
+  stocksPatty = (stocksPatty > 1 && random3 >= 0.5) ? stocksPatty - 1 : stocksPatty + 1;
 }
 function serveBurger() {
   if (burgers_0 >= 1 && customers_0 >= 1) {
