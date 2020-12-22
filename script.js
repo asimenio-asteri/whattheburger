@@ -27,34 +27,30 @@ var time = {
 var resPt = 0;
 var cookBurgerTime = null;
 var resPattyTime = null;
-setInterval(updateOther, 10000);
-setInterval(update, 100);
-setInterval(comments, 15000);
-setInterval(timeClock, 100);
-setInterval(save, 5000);
 var comment = "No comments yet...";
 var random = Math.random();
 var random2 = Math.random();
 var random3 = Math.random();
 var custMult = 10;
-var name = "";
+var personName = "";
+var saveList = ["buns", "burgers_0", "cheese", "customers_0", "customersServed", "money", "patty", "pattyUnlock", "personName", "resPt", "stocksBuns", "stocksCheese", "stocksPatty", "visitedBefore"];
 var order = {
   nameList: ["Karen", "Dave", "Jacob", "Caroline", "Jack", "Kim", "Christopher", "David", "Rose", "Jennifer", "Carlos", "Derek", "Connor", "Jimmy", "Hank", "Dennis"],
   nameRandom: Math.floor(Math.random() * 16),
   orderFlip: Math.random(),
   orderRandom: (pattyUnlock ? (orderFlip >= 0.5 ? "patty" : "cheese") : "cheese"),
   ordersToday: 1,
-  order: function() { 
-    let orderName = this.nameList[this.nameRandom];
+  newOrder: function() { 
+    order.nameRandom = Math.floor(Math.random() * 16);
+    let orderName = order.nameList[order.nameRandom];
     let cardTemplate = `
-    <h3>#${this.ordersToday}</h3>
-    <p>Customer: ${orderName} <br />Order: ${this.orderRandom}</p>`;
-    this.nameRandom = Math.floor(Math.random() * 16);
+    <h3>#${order.ordersToday}</h3>
+    <p>Customer: ${orderName} <br />Order: ${order.orderRandom}</p>`;
     var orderSect = get("orderMenu");
     var card = document.createElement("div");
     card.innerHTML = cardTemplate;
     orderSect.appendChild(card);
-    this.ordersToday++;
+    order.ordersToday++;
   }
 };
 var story = {
@@ -78,8 +74,8 @@ var story = {
     visitedBefore = true;
   },
   submitName: function() {
-    name = get("storyName").value;
-    localStorage.setItem('name', JSON.stringify(name));
+    personName = get("storyName").value;
+    localStorage.setItem('name', JSON.stringify(personName));
     get("storyMode").style.display = "none";
     get("storyMode").style.backgroundColor = "#0000";
   },
@@ -89,15 +85,20 @@ var rentPaid = true;
 var achieve = {
   serve10: false
 };
-function save() {
-  localStorage.setItem('money', JSON.stringify(money));
-  localStorage.setItem('visted', JSON.stringify(visitedBefore));
-  localStorage.setItem('served', JSON.stringify(customersServed));
-}
-function load() {
-  money = JSON.parse(localStorage.getItem('money'));
-  customersServed = JSON.parse(localStorage.getItem('served'));
-}
+var saveload = {
+  save: function() {
+    saveList.forEach(x => localStorage.setItem(x, JSON.stringify(window[x])));
+  },
+  load: function() {
+    visitedBefore = JSON.parse(localStorage.getItem('visitedBefore'));
+    if (visitedBefore == null || visitedBefore == undefined) {
+      visitedBefore = false;
+    }
+    if (visitedBefore) {
+      saveList.forEach(x => window[x] = JSON.parse(localStorage.getItem(x)));
+    }
+  }
+};
 var timeMin = 0;
 var timeHour = 0;
 var timeDay = 0;
@@ -147,16 +148,16 @@ function comments() {
     case 0:
       comment = "This tastes horrible! 1/5 stars.";
       break;
-      case 1:
-        comment = "I don't like it. 2/5 stars...";
+    case 1:
+      comment = "I don't like it. 2/5 stars...";
       break;
-      case 2:
-        comment = "I guess I'll eat it... 3/5";
-        break;
+    case 2:
+      comment = "I guess I'll eat it... 3/5";
+      break;
     case 3:
       comment = "What if I told you we live in a GAME!";
       break;
-      case 4:
+    case 4:
       comment = "I need extra cheese!";
       break;
     case 5:
@@ -168,16 +169,16 @@ function comments() {
     case 7:
       comment = "Needs more kinds of food than just burgers.";
       break;
-      case 8:
-        comment = "wtf happened to my toilet";
+    case 8:
+      comment = "wtf happened to my toilet";
       break;
-      case 9:
+    case 9:
       comment = "DaveRainbowin said this was a good place to go! He's right!";
       break;
     default:
       comment = "I want to see your manager!";
-    }
   }
+}
 function update() {
   random = Math.random();
   random2 = Math.random();
@@ -194,8 +195,8 @@ function update() {
   get("serve10").value = customersServed;
   get("rpCount").innerHTML = `${resPt} RP`;
   visitedBefore = false;
-  name = JSON.parse(localStorage.getItem('name'));
-  visitedBefore = (name ? true : false);
+  personName = JSON.parse(localStorage.getItem('personName'));
+  visitedBefore = (personName ? true : false);
   if (!visitedBefore && !story.storyPopped) {
     story.storyPopup();
     story.storyPopped = true;
@@ -342,5 +343,11 @@ function get(id) {
   return document.getElementById(id);
 }
 function init() {
-  load();
+  saveload.load();
 }
+setInterval(updateOther, 10000);
+setInterval(update, 100);
+setInterval(comments, 15000);
+setInterval(timeClock, 2000);
+setInterval(save, 5000);
+setInterval(order.newOrder, 10000);
