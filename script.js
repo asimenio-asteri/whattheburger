@@ -11,6 +11,7 @@ var customersServed = 0;
 0 = just cheese & buns (all have buns)
 1 = just patty
 2 = cheese & patty
+3 = all of the above
 */
 var pattyUnlock = false;
 var visitedBefore = false;
