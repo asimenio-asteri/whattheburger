@@ -194,9 +194,10 @@ function update() {
   get("comments").innerHTML = comment;
   get("serve10").value = customersServed;
   get("rpCount").innerHTML = `${resPt} RP`;
-  visitedBefore = false;
+  visitedBefore = true;
+  /* i don't even know what this part was for
   personName = JSON.parse(localStorage.getItem('personName'));
-  visitedBefore = (personName ? true : false);
+  visitedBefore = (personName ? true : false); */
   /* make a popup happen
   if (!visitedBefore && !story.storyPopped) {
     story.storyPopup();
@@ -312,7 +313,7 @@ function checkIngredients() {
     burgerType = 2;
   }
 }
-var rules = document.styleSheets[0].cssRules;
+/* var rules = document.styleSheets[0].cssRules;
 function theme(type) {
   if (type == 0) {
     rules[0].style.color = "white";
@@ -327,7 +328,7 @@ function theme(type) {
     rules[1].style.backgroundColor = "white";
     rules[1].style.borderColor = "black";
   }
-}
+} */
 function openTab(pageName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("menu");
@@ -346,9 +347,10 @@ function get(id) {
 function init() {
   saveload.load();
 }
+init();
 setInterval(updateOther, 10000);
 setInterval(update, 100);
 setInterval(comments, 15000);
 setInterval(timeClock, 2000);
-setInterval(save, 5000);
+setInterval(saveload.save, 5000);
 setInterval(order.newOrder, 10000);
