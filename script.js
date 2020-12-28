@@ -197,6 +197,7 @@ function update() {
   visitedBefore = false;
   personName = JSON.parse(localStorage.getItem('personName'));
   visitedBefore = (personName ? true : false);
+  /* make a popup happen
   if (!visitedBefore && !story.storyPopped) {
     story.storyPopup();
     story.storyPopped = true;
@@ -204,7 +205,7 @@ function update() {
     get("storyMode").style.display = "none";
     get("storyMode").style.backgroundColor = "#0000";
     story.storyPopped = true;
-  }
+  } */
   if (pattyUnlock) {
     let tags = document.getElementsByClassName("pattyBuy");
     for (i = 0; i < tags.length; i++) {
