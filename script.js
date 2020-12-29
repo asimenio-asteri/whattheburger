@@ -31,7 +31,8 @@ var comment = "No comments yet...";
 var random = Math.random();
 var random2 = Math.random();
 var random3 = Math.random();
-var custMult = 10;
+var custMult = 6;
+var custServedInTick = 0;
 var personName = "";
 var saveList = ["buns", "burgers_0", "cheese", "customers_0", "customersServed", "money", "patty", "pattyUnlock", "personName", "resPt", "stocksBuns", "stocksCheese", "stocksPatty", "visitedBefore"];
 var order = {
@@ -223,12 +224,17 @@ function update() {
   }
 }
 function updateOther() {
+  custMult *= ((custServedInTick == 0) ? 0.75 : (custServedInTick == 1) ? 1.2 : (custServedInTick == 2) ? 1.3 : (custServedInTick == 3) ? 1.4 : (custServedInTick == 4) ? 1.5 : 1.6);
   let randomX = random * custMult;
-  let mult = custMult / 2;
-  customers_0 = ((randomX <= mult) ? 0 : (randomX <= mult + 2) ? 1 : (randomX <= mult + 4) ? 2 : (randomX <= mult + 6) ? 3 : (randomX <= mult + 8) ? 4 : 5);
-  stocksCheese = (stocksCheese >= 1 && random2 > 0.5) ? stocksCheese - 1 : stocksCheese + 1;
-  stocksBuns = (random >= 0.5 && stocksBuns > 1) ? stocksBuns - 1 : stocksBuns + 1;
-  stocksPatty = (random3 >= 0.5 && stocksPatty > 1) ? stocksPatty - 1 : stocksPatty + 1;
+  customers_0 = ((randomX <= 1) ? 0 : (randomX <= 2) ? 1 : (randomX <= 3) ? 2 : (randomX <= 4) ? 3 : (randomX <= 5) ? 4 : 5);
+  stocksCheese = ((random >= 0.5 && stocksCheese > 1) ? stocksCheese - 1 : (stocksCheese >= 8) ? stocksCheese - 1 : stocksCheese + 1);
+  stocksBuns = ((random2 >= 0.5 && stocksBuns > 1) ? stocksBuns - 1 : (stocksBuns >= 8) ? stocksBuns - 1 : stocksBuns + 1);
+  stocksPatty = ((random3 >= 0.5 && stocksPatty > 1) ? stocksPatty - 1 : (stocksPatty >= 8) ? stocksPatty - 1 : stocksPatty + 1);
+  custServedInTick = 0;
+}
+function adReboot() {
+  money -= 10;
+  custServedInTick++;
 }
 function serveBurger() {
   if (burgers_0 >= 1 && customers_0 >= 1) {
@@ -237,6 +243,7 @@ function serveBurger() {
     customers_0--;
     resPt++;
     customersServed++;
+    custServedInTick++;
   }
 }
 function cookBurger() {

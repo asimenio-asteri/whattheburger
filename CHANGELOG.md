@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.2] - 2020-12-28
+### Changed
+- The customer number (it was messy and weird)
+
+### Added
+- Dynamic customers, the more you serve the more you will attract and vice versa
+- Advertising feature to attract more customers
+
 ## [0.2.1] - 2020-12-27
 ### Added
 - Autosave
