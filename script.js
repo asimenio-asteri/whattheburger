@@ -233,8 +233,10 @@ function updateOther() {
   custServedInTick = 0;
 }
 function adReboot() {
-  money -= 10;
-  custServedInTick++;
+  if (money >= 10) {
+    money -= 10;
+    custServedInTick++;
+  }
 }
 function serveBurger() {
   if (burgers_0 >= 1 && customers_0 >= 1) {
