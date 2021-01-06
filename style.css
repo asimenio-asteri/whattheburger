@@ -29,11 +29,9 @@ button {
   border-radius: 8px;
   width: 25%;
   height: 25%;
+  text-align: center;
 }
 .aTitle {
   font-size: large;
   text-align: center;
-}
-.aBar {
-  margin: 0px auto;
 }
