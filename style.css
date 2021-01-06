@@ -29,6 +29,7 @@ button {
   border-radius: 8px;
   width: 25%;
   height: 25%;
+  margin: 0px auto;
 }
 .aTitle {
   font-size: large;
