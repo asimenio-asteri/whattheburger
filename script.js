@@ -41,9 +41,9 @@ function load() {
 }
 function timeClock() {
   let clock = document.getElementById("clock");
-  var str_hour = ""
-  var str_min = ""
-  var str_time = ""
+  var str_hour = "";
+  var str_min = "";
+  var str_time = "";
   timeMin++;
   if (timeMin == 59) {
     timeHour++;
@@ -63,43 +63,43 @@ function timeClock() {
     str_min = timeMin.toString();
   }
   str_time = str_hour + ":" + str_min;
-  clock.innerHTML = str_time
+  clock.innerHTML = str_time;
 }
 function comments() {
   let num = Math.round(random * 10);
   switch(num) {
     case 0:
-      comment = "This tastes horrible! 1/5 stars."
+      comment = "This tastes horrible! 1/5 stars.";
       break;
     case 1:
-      comment = "I don't like it. 2/5 stars..."
+      comment = "I don't like it. 2/5 stars...";
       break;
     case 2:
-      comment = "I guess I'll eat it... 3/5"
+      comment = "I guess I'll eat it... 3/5";
       break;
     case 3:
-      comment = "What if I told you we live in a GAME!"
+      comment = "What if I told you we live in a GAME!";
       break;
     case 4:
-      comment = "Hast du irgend käse?"
+      comment = "I want to speak with your manager!";
       break;
     case 5:
-      comment = "This place is pretty cheap, and it tastes kinda good. 4/5 star."
+      comment = "This place is pretty cheap, and it tastes kinda good. 4/5 star.";
       break;
     case 6:
-      comment = "Why no boterham?"
+      comment = "Why no boterham?";
       break;
     case 7:
-      comment = "Needs more kinds of food than just burgers."
+      comment = "Needs more kinds of food than just burgers.";
       break;
     case 8:
-      comment = "wtf happened to my toilet"
+      comment = "wtf happened to my toilet";
       break;
     case 9:
-      comment = "DaveRainbowin said this was a good place to go! He's right!"
+      comment = "DaveRainbowin said this was a good place to go! He's right!";
       break;
     default:
-      comment = "what is stonks"
+      comment = "what is stonks";
   }
 }
 function update() {
@@ -116,7 +116,7 @@ function update() {
   document.getElementById("stonksPatty").innerHTML = "Price: " + stocksPatty;
   document.getElementById("comments").innerHTML = comment;
   if (pattyUnlock) {
-    let tags = document.getElementsByClassName("pattyBuy")
+    let tags = document.getElementsByClassName("pattyBuy");
     for (i = 0; i < tags.length; i++) {
       tags[i].style.display = "block";
     }
@@ -135,7 +135,7 @@ function updateOther() {
     customers_0 = 3; 
   } else if (randomX <= mult + 8) {
     customers_0 = 4;
-  } else if (randomX = 0) {
+  } else if (randomX == 0) {
     customers_0 = 5;
   }
   if (stocksCheese >= 1 && random2 > 0.5) {
@@ -160,8 +160,8 @@ function serveBurger() {
     money += 5;
     customers_0--;
     resPt++;
-  };
-};
+  }
+}
 function cookBurger() {
   if (cookBurgerTime == null) {
     cookBurgerTime = setInterval(cookBar, 10);
@@ -231,7 +231,7 @@ function checkIngredients() {
   } else if (cheeseCheck && pattyCheck) {
     burgerType = 2;
   }
-};
+}
 function openTab(pageName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("menu");
