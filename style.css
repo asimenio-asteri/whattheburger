@@ -5,15 +5,12 @@ body {
   padding: 20px; 
   font-family: Lucida Console;
 }
-
 #progressCook{
   color:red;
 }
-
 #burgerNum{
   background-color:violet
 }
-
 #moneyNum{
   background-color:violet
 }
