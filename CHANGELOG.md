@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.0.0] - 2021-01-08
 ### Fixed
 - Javascript errors
+- "What The Burger" instead of "whattheburger" in HTML title
 
 ### Added
 - A changelog
