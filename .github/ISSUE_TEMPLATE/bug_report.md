@@ -11,12 +11,15 @@ assignees: ''
 ## A description of the bug
 ### Description
 When this happens, [...] doesn't work.
+
 ### Walkthrough
 1. Go to the [...] tab
 2. Click on [...]
 3. See [...]
+
 ## What it should do
 - When I click on [...] it should [...]
+
 ### A chunk of code to work with (if you know any/want to help)
 ```js
 function foo() {
