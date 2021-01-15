@@ -181,6 +181,9 @@ function comments() {
   }
 }
 function update() {
+  if (achieve.serve10) {
+    get("serve10div").style.backgroundColor = "rgba(30, 220, 36, 0.69)";
+  }
   random = Math.random();
   random2 = Math.random();
   get("burgerNum").innerHTML = `Burgers: ${burgers_0}`;
