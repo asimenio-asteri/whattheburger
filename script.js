@@ -42,7 +42,7 @@ var order = {
   orderRandom: (pattyUnlock ? (orderFlip >= 0.5 ? "patty" : "cheese") : "cheese"),
   ordersToday: 1,
   newOrder: function() { 
-    order.nameRandom = Math.floor(Math.random() * 16);
+    order.nameRandom = Math.floor(Math.random() * 17);
     let orderName = order.nameList[order.nameRandom];
     let cardTemplate = `
     <h3>#${order.ordersToday}</h3>
