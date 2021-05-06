@@ -37,7 +37,7 @@ var personName = "";
 var saveList = ["buns", "burgers_0", "cheese", "customers_0", "customersServed", "money", "patty", "pattyUnlock", "personName", "resPt", "stocksBuns", "stocksCheese", "stocksPatty", "visitedBefore"];
 var order = {
   nameList: ["Karen", "Dave", "Jacob", "Caroline", "Jack", "Kim", "Christopher", "David", "Rose", "Jennifer", "Carlos", "Derek", "Connor", "Jimmy", "Hank", "Dennis", "Elle"],
-  nameRandom: Math.floor(Math.random() * 16),
+  nameRandom: Math.floor(Math.random() * 17),
   orderFlip: Math.random(),
   orderRandom: (pattyUnlock ? (orderFlip >= 0.5 ? "patty" : "cheese") : "cheese"),
   ordersToday: 1,
