@@ -178,6 +178,17 @@ function timeClock() {
     // ^ make someone get angry that you aren't paying rent
   }
 }
+let optionsBool = 1;
+function optionsMenu() {
+  let options = get("optionsMenu");
+  if (optionsBool == 1) {
+    options.style.display = "block";
+    optionsBool = 0;
+  } else if (optionsBool == 0) {
+    options.style.display = "none";
+    optionsBool = 1;
+  }
+}
 function comments() {
   let num = Math.round(random * 10);
   switch(num) {

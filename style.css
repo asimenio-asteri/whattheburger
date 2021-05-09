@@ -15,6 +15,7 @@ body {
   right: 5px;
   background-color: transparent;
   border: transparent;
+  z-index: 2;
 }
 #optionsMenu, #orderMenu, #researchMenu, #aMenu {
   display: none;
@@ -109,4 +110,15 @@ button {
 }
 .cookingBreak {
   height: 15px;
+}
+#optionsMenu {
+  position: fixed;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.651);
+  color: grey;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
 }
