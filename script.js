@@ -36,6 +36,7 @@ var custServedInTick = 0;
 var personName = "";
 var autosave = true;
 var saveList = ["buns", "burgers_0", "cheese", "customers_0", "customersServed", "money", "patty", "pattyUnlock", "personName", "resPt", "stocksBuns", "stocksCheese", "stocksPatty", "visitedBefore", "autosave"];
+var defaultList = [0, 0, 5, 0, 0, 5, 0, false, "", 0, 4, 3, 6, false, true];
 var order = {
   nameList: ["Karen", "Dave", "Jacob", "Caroline", "Jack", "Kim", "Christopher", "David", "Rose", "Jennifer", "Carlos", "Derek", "Connor", "Jimmy", "Hank", "Dennis", "Elle"],
   nameRandom: Math.floor(Math.random() * 17),
@@ -98,6 +99,11 @@ var saveload = {
     }
     if (visitedBefore) {
       saveList.forEach(x => window[x] = JSON.parse(localStorage.getItem(x)));
+    }
+  },
+  reset: function() {
+    for (x = 0; x < saveList.length; x++) {
+      window[saveList[x]] = defaultList[x];
     }
   }
 };
