@@ -35,27 +35,43 @@ var custMult = 6;
 var custServedInTick = 0;
 var personName = "";
 var autosave = true;
-var saveList = ["buns", "burgers_0", "cheese", "customers_0", "customersServed", "money", "patty", "pattyUnlock", "personName", "resPt", "stocksBuns", "stocksCheese", "stocksPatty", "visitedBefore", "autosave"];
-var defaultList = [0, 0, 5, 0, 0, 5, 0, false, "", 0, 4, 3, 6, false, true];
+var saveList = ["buns", "burgers_0", "cheese", "customers_0", "customersServed", "money", "patty", "pattyUnlock", "personName", "resPt", "stocksBuns", "stocksCheese", "stocksPatty", "visitedBefore", "autosave", "order.currentOrders", "custMult"];
+var defaultList = [5, 0, 5, 0, 0, 5, 0, false, "", 0, 4, 3, 6, false, true, 0, 6];
 var order = {
   nameList: ["Karen", "Dave", "Jacob", "Caroline", "Jack", "Kim", "Christopher", "David", "Rose", "Jennifer", "Carlos", "Derek", "Connor", "Jimmy", "Hank", "Dennis", "Elle"],
   nameRandom: Math.floor(Math.random() * 17),
   orderFlip: Math.random(),
   orderRandom: (pattyUnlock ? (orderFlip >= 0.5 ? "patty" : "cheese") : "cheese"),
   ordersToday: 1,
+  currentOrders: 0,
   newOrder: function() { 
     order.nameRandom = Math.floor(Math.random() * 17);
     let orderName = order.nameList[order.nameRandom];
     let cardTemplate = `
+    <div id="order${order.ordersToday}">
     <h3>#${order.ordersToday}</h3>
-    <p>Customer: ${orderName} <br />Order: ${order.orderRandom}</p>`;
+    <p>Customer: ${orderName} <br />Order: ${order.orderRandom}</p> <br />
+    <button onclick="serveOrder(${order.ordersToday})">Serve</button>
+    </div>`;
     var orderSect = get("orderMenu");
     var card = document.createElement("div");
     card.innerHTML = cardTemplate;
     orderSect.appendChild(card);
     order.ordersToday++;
+    order.currentOrders++;
   }
 };
+function serveOrder(orderNum) {
+  if (burgers_0 >= 1) {
+    burgers_0--;
+    money += 5;
+    get(`order${orderNum}`).remove();
+    resPt++;
+    customersServed++;
+    custServedInTick++;
+    order.currentOrders--;
+  }
+}
 var story = {
   storyPopup: function() {
     var storyPopupDiv = get("storyMode");
@@ -99,6 +115,9 @@ var saveload = {
     }
     if (visitedBefore) {
       saveList.forEach(x => window[x] = JSON.parse(localStorage.getItem(x)));
+      for (x = 0; x < order.currentOrders; x++) {
+        order.newOrder();
+      }
     }
   },
   reset: function() {
@@ -243,9 +262,12 @@ function update() {
   }
 }
 function updateOther() {
-  custMult *= ((custServedInTick == 0) ? 0.9 : (custServedInTick == 1) ? 1.2 : (custServedInTick == 2) ? 1.3 : (custServedInTick == 3) ? 1.4 : (custServedInTick == 4) ? 1.5 : 1.6);
   let randomX = random * custMult;
   customers_0 = ((randomX <= 1) ? 0 : (randomX <= 2) ? 1 : (randomX <= 3) ? 2 : (randomX <= 4) ? 3 : (randomX <= 5) ? 4 : 5);
+  custMult = custServedInTick * 0.3 + 1;
+  for (x = 0; x < customers_0; x++) {
+    order.newOrder();
+  }
   stocksCheese = ((random >= 0.5 && stocksCheese > 1) ? stocksCheese - 1 : (stocksCheese >= 8) ? stocksCheese - 1 : stocksCheese + 1);
   stocksBuns = ((random2 >= 0.5 && stocksBuns > 1) ? stocksBuns - 1 : (stocksBuns >= 8) ? stocksBuns - 1 : stocksBuns + 1);
   stocksPatty = ((random3 >= 0.5 && stocksPatty > 1) ? stocksPatty - 1 : (stocksPatty >= 8) ? stocksPatty - 1 : stocksPatty + 1);
@@ -254,16 +276,6 @@ function updateOther() {
 function adReboot() {
   if (money >= 10) {
     money -= 10;
-    custServedInTick++;
-  }
-}
-function serveBurger() {
-  if (burgers_0 >= 1 && customers_0 >= 1) {
-    burgers_0--;
-    money += 5;
-    customers_0--;
-    resPt++;
-    customersServed++;
     custServedInTick++;
   }
 }
@@ -365,4 +377,3 @@ setInterval(update, 100);
 setInterval(comments, 15000);
 setInterval(timeClock, 2000);
 if (autosave) { var autoInterval = setInterval(saveload.save, 5000); }
-setInterval(order.newOrder, 10000);
