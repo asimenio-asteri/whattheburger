@@ -9,6 +9,13 @@ body {
   border-bottom: none;
   background-color: white;
 }
+.imgBtn {
+  position: fixed;
+  top: 10px;
+  right: 5px;
+  background-color: transparent;
+  border: transparent;
+}
 #optionsMenu, #orderMenu, #researchMenu, #aMenu {
   display: none;
 }

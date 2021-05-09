@@ -34,7 +34,8 @@ var random3 = Math.random();
 var custMult = 6;
 var custServedInTick = 0;
 var personName = "";
-var saveList = ["buns", "burgers_0", "cheese", "customers_0", "customersServed", "money", "patty", "pattyUnlock", "personName", "resPt", "stocksBuns", "stocksCheese", "stocksPatty", "visitedBefore"];
+var autosave = true;
+var saveList = ["buns", "burgers_0", "cheese", "customers_0", "customersServed", "money", "patty", "pattyUnlock", "personName", "resPt", "stocksBuns", "stocksCheese", "stocksPatty", "visitedBefore", "autosave"];
 var order = {
   nameList: ["Karen", "Dave", "Jacob", "Caroline", "Jack", "Kim", "Christopher", "David", "Rose", "Jennifer", "Carlos", "Derek", "Connor", "Jimmy", "Hank", "Dennis", "Elle"],
   nameRandom: Math.floor(Math.random() * 17),
@@ -100,6 +101,10 @@ var saveload = {
     }
   }
 };
+function toggleAuto() {
+  autosave = autosave ? false : true;
+  get("autoTog").innerHTML = `Autosave is ${autosave ? "ON" : "OFF"}`;
+}
 var timeMin = 0;
 var timeHour = 0;
 var timeDay = 0;
@@ -227,7 +232,7 @@ function update() {
   }
 }
 function updateOther() {
-  custMult *= ((custServedInTick == 0) ? 0.75 : (custServedInTick == 1) ? 1.2 : (custServedInTick == 2) ? 1.3 : (custServedInTick == 3) ? 1.4 : (custServedInTick == 4) ? 1.5 : 1.6);
+  custMult *= ((custServedInTick == 0) ? 0.9 : (custServedInTick == 1) ? 1.2 : (custServedInTick == 2) ? 1.3 : (custServedInTick == 3) ? 1.4 : (custServedInTick == 4) ? 1.5 : 1.6);
   let randomX = random * custMult;
   customers_0 = ((randomX <= 1) ? 0 : (randomX <= 2) ? 1 : (randomX <= 3) ? 2 : (randomX <= 4) ? 3 : (randomX <= 5) ? 4 : 5);
   stocksCheese = ((random >= 0.5 && stocksCheese > 1) ? stocksCheese - 1 : (stocksCheese >= 8) ? stocksCheese - 1 : stocksCheese + 1);
@@ -325,22 +330,6 @@ function checkIngredients() {
     burgerType = 2;
   }
 }
-/* var rules = document.styleSheets[0].cssRules;
-function theme(type) {
-  if (type == 0) {
-    rules[0].style.color = "white";
-    rules[0].style.backgroundColor = "#2C2F33";
-    rules[1].style.color = "white";
-    rules[1].style.backgroundColor = "#2C2F33";
-    rules[1].style.borderColor = "white";
-  } else if (type == 1) {
-    rules[0].style.color = "black";
-    rules[0].style.backgroundColor = "white";
-    rules[1].style.color = "black";
-    rules[1].style.backgroundColor = "white";
-    rules[1].style.borderColor = "black";
-  }
-} */
 function openTab(pageName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("menu");
@@ -364,5 +353,5 @@ setInterval(updateOther, 10000);
 setInterval(update, 100);
 setInterval(comments, 15000);
 setInterval(timeClock, 2000);
-setInterval(saveload.save, 5000);
+if (autosave) { setInterval(saveload.save, 5000); }
 setInterval(order.newOrder, 10000);
