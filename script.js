@@ -110,6 +110,11 @@ var saveload = {
 function toggleAuto() {
   autosave = autosave ? false : true;
   get("autoTog").innerHTML = `Autosave is ${autosave ? "ON" : "OFF"}`;
+  if (autoInterval) {
+    autoInterval = setInterval(saveload.save, 5000);
+  } else {
+    clearInterval(autoInterval);
+  }
 }
 var timeMin = 0;
 var timeHour = 0;
@@ -359,5 +364,5 @@ setInterval(updateOther, 10000);
 setInterval(update, 100);
 setInterval(comments, 15000);
 setInterval(timeClock, 2000);
-if (autosave) { setInterval(saveload.save, 5000); }
+if (autosave) { var autoInterval = setInterval(saveload.save, 5000); }
 setInterval(order.newOrder, 10000);
