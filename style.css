@@ -52,7 +52,7 @@ button {
   bottom: 10px;
 }
 .bubble1 {
-  width: 33%;
+  width: 32.5%;
   position: relative;
   left: 5px;
   background-color: grey;
@@ -62,9 +62,9 @@ button {
   height: 225px
 }
 .bubble2 {
-  width: 33%;
+  width: 32.5%;
   position: relative;
-  left: 34%;
+  left: 33.65%;
   top: -226.5px;
   height: 225px;
   background-color: grey;
@@ -73,9 +73,9 @@ button {
   height: fit-content;
 }
 .bubble3 {
-  width: 33%;
+  width: 32.5%;
   position: relative;
-  left: 68%;
+  left: 67%;
   top: -454px;
   height: 225px;
   background-color: grey;
@@ -121,4 +121,10 @@ button {
   right: 0;
   left: 0;
   text-align: center;
+}
+.optionsButton {
+  font-size: larger;
+}
+#autoTog {
+  color: white;
 }
