@@ -31,8 +31,7 @@ var comment = "No comments yet...";
 var random = Math.random();
 var random2 = Math.random();
 var random3 = Math.random();
-var custMult = 6;
-var custServedInTick = 0;
+var custServedInTick = 5;
 var personName = "";
 var autosave = true;
 var saveList = ["buns", "burgers_0", "cheese", "customers_0", "customersServed", "money", "patty", "pattyUnlock", "personName", "resPt", "stocksBuns", "stocksCheese", "stocksPatty", "visitedBefore", "autosave", "order.currentOrders", "custMult"];
@@ -273,9 +272,8 @@ function update() {
   }
 }
 function updateOther() {
-  let randomX = random * custMult;
+  let randomX = random * (custServedInTick + 1);
   customers_0 = ((randomX <= 1) ? 0 : (randomX <= 2) ? 1 : (randomX <= 3) ? 2 : (randomX <= 4) ? 3 : (randomX <= 5) ? 4 : 5);
-  custMult = custServedInTick * 0.3 + 1;
   for (x = 0; x < customers_0; x++) {
     order.newOrder();
   }
