@@ -272,8 +272,8 @@ function update() {
   }
 }
 function updateOther() {
-  let randomX = (random + 0.75) * (custServedInTick + 1);
-  for (x = 0; x < randomX; x++) {
+  customers_0 = (random + 0.5) * (custServedInTick + 1);
+  for (x = 0; x < customers_0; x++) {
     order.newOrder();
   }
   stocksCheese = ((random >= 0.5 && stocksCheese > 1) ? stocksCheese - 1 : (stocksCheese >= 8) ? stocksCheese - 1 : stocksCheese + 1);
