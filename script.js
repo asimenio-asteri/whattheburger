@@ -34,8 +34,8 @@ var random3 = Math.random();
 var custServedInTick = 5;
 var personName = "";
 var autosave = true;
-var saveList = ["buns", "burgers_0", "cheese", "customers_0", "customersServed", "money", "patty", "pattyUnlock", "personName", "resPt", "stocksBuns", "stocksCheese", "stocksPatty", "visitedBefore", "autosave", "order.currentOrders", "custServedInTick"];
-var defaultList = [5, 0, 5, 0, 0, 5, 0, false, "", 0, 4, 3, 6, false, true, 0, 5];
+var saveList = ["buns", "burgers_0", "cheese", "customers_0", "customersServed", "money", "patty", "pattyUnlock", "personName", "resPt", "stocksBuns", "stocksCheese", "stocksPatty", "visitedBefore", "autosave", "order.currentOrders", "custServedInTick", "time.rPatty"];
+var defaultList = [5, 0, 5, 0, 0, 5, 0, false, "", 0, 4, 3, 6, false, true, 0, 5, 0];
 var order = {
   nameList: ["Karen", "Dave", "Jacob", "Caroline", "Jack", "Kim", "Christopher", "David", "Rose", "Jennifer", "Carlos", "Derek", "Connor", "Jimmy", "Hank", "Dennis", "Elle"],
   nameRandom: Math.floor(Math.random() * 17),
@@ -272,7 +272,7 @@ function update() {
   }
 }
 function updateOther() {
-  customers_0 = (random + 0.5) * (custServedInTick + 1);
+  customers_0 = Math.round((random + 0.5) * (custServedInTick + 1));
   for (x = 0; x < customers_0; x++) {
     order.newOrder();
   }
