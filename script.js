@@ -117,6 +117,9 @@ var saveload = {
       for (x = 0; x < order.currentOrders; x++) {
         order.newOrder();
       }
+      if (time.rPatty > 0) {
+        resPatty();
+      }
     }
   },
   reset: function() {
