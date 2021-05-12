@@ -58,7 +58,6 @@ button {
   background-color: grey;
   border: 1px solid grey;
   border-radius: 16px;
-  height: fit-content;
   height: 225px
 }
 .bubble2 {
@@ -70,7 +69,6 @@ button {
   background-color: grey;
   border: 1px solid grey;
   border-radius: 16px;
-  height: fit-content;
 }
 .bubble3 {
   width: 32.5%;
@@ -81,7 +79,6 @@ button {
   background-color: grey;
   border: 1px solid grey;
   border-radius: 16px;
-  height: fit-content;
 }
 .halfBleft {
   position: relative;
