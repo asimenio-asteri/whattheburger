@@ -69,6 +69,7 @@ button {
   background-color: grey;
   border: 1px solid grey;
   border-radius: 16px;
+  overflow-x: hidden;
 }
 .bubble3 {
   width: 32.5%;
