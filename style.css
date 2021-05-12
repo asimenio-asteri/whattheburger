@@ -70,6 +70,7 @@ button {
   border: 1px solid grey;
   border-radius: 16px;
   overflow-x: hidden;
+  text-align: center;
 }
 .bubble3 {
   width: 32.5%;
