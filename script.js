@@ -261,10 +261,8 @@ function update() {
   } */
   if (pattyUnlock) {
     let tags = document.getElementsByClassName("pattyBuy");
-    for (i = 0; i < tags.length; i++) {
-      tags[i].style.display = "block";
-      tags[i].style.textAlign = "center";
-    }
+    tags[0].style.display = "inline";
+    tags[1].style.display = "block";
   }
   if (customersServed >= 10) {
     achieve.serve10 = true;
