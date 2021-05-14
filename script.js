@@ -113,7 +113,10 @@ var saveload = {
       visitedBefore = false;
     }
     if (visitedBefore) {
-      saveList.forEach(x => window[x] = JSON.parse(localStorage.getItem(x)));
+      for (x = 0; x < saveList.length; x++) {
+        window[saveList[x]] = JSON.parse(localStorage.getItem(x));
+        if (window[saveList[x]] == undefined) { window[saveList[x]] = defaultList[x]; }
+      }
       for (x = 0; x < order.currentOrders; x++) {
         order.newOrder();
       }
