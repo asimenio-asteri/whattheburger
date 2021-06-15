@@ -6,6 +6,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.2] - 2021-06-14
+## Changed
+- The loading function (now it loads)
+
+## [0.3.1] - 2021-05-10
+### Changed
+- The formula for customer attraction
+
+## [0.3.0] - 2021-05-09
+### Changed
+- The entire UI
+
+### Added
+- Customer orders
+- Options menu
+- Autosave toggle
+- Save reset button
+
 ## [0.2.5] - 2021-01-14
 ### Added
 - Green background to completed achievements

@@ -114,7 +114,7 @@ var saveload = {
     }
     if (visitedBefore) {
       for (x = 0; x < saveList.length; x++) {
-        window[saveList[x]] = JSON.parse(localStorage.getItem(x));
+        window[saveList[x]] = JSON.parse(localStorage.getItem(saveList[x]));
         if (window[saveList[x]] == undefined) { window[saveList[x]] = defaultList[x]; }
       }
       for (x = 0; x < order.currentOrders; x++) {
