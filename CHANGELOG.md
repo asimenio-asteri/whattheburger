@@ -6,15 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.3.2] - 2021-06-14
+## [1.0.2] - 2021-06-14
 ## Changed
 - The loading function (now it loads)
 
-## [0.3.1] - 2021-05-10
+## [1.0.1] - 2021-05-10
 ### Changed
 - The formula for customer attraction
 
-## [0.3.0] - 2021-05-09
+## [1.0.0] - 2021-05-09
 ### Changed
 - The entire UI
 
@@ -56,7 +56,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 - Manual save
 
-## [0.2.0-f] - 2020-07-29
+## [0.2.0] - 2020-07-29
 ### Added
 - Research point counter
 
@@ -125,12 +125,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 - The margin of the story popup
 
-## [0.0.3] - 2020-02-06 [BUGGED]
+## [0.0.3] - 2020-02-06 [YANKED]
 ### Removed
 - Achievements (once again, will be added later)
 - Achievement Menu
 
-## [0.0.2] - 2020-02-03 [BUGGED]
+## [0.0.2] - 2020-02-03 [YANKED]
 ### Fixed
 - The story popup using the old function
 
@@ -153,15 +153,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - A submit button that logs your name into your localStorage
 - A boolean that checks if you've visited the page before (or file)
 
-## [0.0.1-c] - 2020-02-02
+## [0.0.1] - 2020-02-02
 ### Changed
 - CHANGELOG.md to follow the rules of [keeping a changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [0.0.1-b] 2020-01-30
+## [0.0.0] 2020-01-30
 ### Fixed
 - The Achievement menu going into other menus
 - The Cook Burger button that didn't work
 
-## [0.0.1-a] - 2020-01-30
+## [0.0.0-a] - 2020-01-30
 ### Added
 - The first official release on GitHub
