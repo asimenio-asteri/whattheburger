@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.3] - 2021-06-24
+### Fixed
+- Clicking the research without enough points causes the bar to empty
+
 ## [1.0.2] - 2021-06-14
 ## Changed
 - The loading function (now it loads)
