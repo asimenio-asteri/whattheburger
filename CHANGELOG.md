@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.4] - 2021-06-24
+### Changed
+- The cook burger button no longer automatically makes a burger if you click it without enough ingredients
+
 ## [1.0.3] - 2021-06-24
 ### Fixed
 - Clicking the research without enough points causes the bar to empty

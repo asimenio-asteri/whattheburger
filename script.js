@@ -293,10 +293,8 @@ function adReboot() {
   }
 }
 function cookBurger() {
-  if (cookBurgerTime == null) {
+  if (cookBurgerTime == null && buns >= 2 && cheese >= 1) {
     cookBurgerTime = setInterval(cookBar, 10);
-  } else {
-    get("progressCook").value = time.cook;
   }
 }
 function cookBar() {
