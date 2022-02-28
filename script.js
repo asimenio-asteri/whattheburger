@@ -276,11 +276,15 @@ function update() {
     rentPaid = false;
   }
 }
-function updateOther() {
+function makeOrder() {
   customers_0 = Math.round((random + 0.5) * (custServedInTick + 1));
   for (x = 0; x < customers_0; x++) {
     order.newOrder();
   }
+}
+setInterval(makeOrder, 20000);
+function updateOther() {
+  
   stocksCheese = ((random >= 0.5 && stocksCheese > 1) ? stocksCheese - 1 : (stocksCheese >= 8) ? stocksCheese - 1 : stocksCheese + 1);
   stocksBuns = ((random2 >= 0.5 && stocksBuns > 1) ? stocksBuns - 1 : (stocksBuns >= 8) ? stocksBuns - 1 : stocksBuns + 1);
   stocksPatty = ((random3 >= 0.5 && stocksPatty > 1) ? stocksPatty - 1 : (stocksPatty >= 8) ? stocksPatty - 1 : stocksPatty + 1);
