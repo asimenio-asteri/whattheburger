@@ -127,3 +127,23 @@ button {
 #autoTog {
   color: white;
 }
+#graphics > * > * {
+  margin: 0px;
+  padding: 0px;
+}
+#graphics > * {
+  display: block;
+  line-height: 0px;
+}
+#b1 {
+  position: absolute;
+  left: 72px;
+  top: 44px;
+  z-index: -1;
+}
+#b2 {
+  position: absolute;
+  left: 168px;
+  top: 44px;
+  z-index: -1;
+}
