@@ -138,12 +138,33 @@ button {
 #b1 {
   position: absolute;
   left: 72px;
-  top: 44px;
+  top: 92px;
   z-index: -1;
 }
 #b2 {
   position: absolute;
   left: 168px;
-  top: 44px;
+  top: 92px;
+  z-index: -1;
+}
+#b3 {
+  position: absolute;
+  left: 184px;
+  top: 90px;
+  z-index: 1;
+}
+#b4 {
+  position: relative;
+  right: 48px;
+  z-index: -1;
+}
+#b5 {
+  position: relative;
+  right: 48px;
+  z-index: -1;
+}
+#b6 {
+  position: relative;
+  right: 48px;
   z-index: -1;
 }
